@@ -1,0 +1,189 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .content {
+    padding-right: 20px;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      color: color-mix(in srgb, var(--default-color), transparent 15%);
+    }
+
+    @media (max-width: 992px) {
+      padding-right: 0;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .stats-container {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  }
+
+  .stat-item {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+      font-family: var(--heading-font);
+    }
+
+    .label {
+      font-size: 0.9rem;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+
+      .number {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .cta-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+
+    &.btn-primary {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      border-color: var(--accent-color);
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--accent-color), black 15%);
+        transform: translateY(-2px);
+      }
+    }
+
+    &.btn-outline {
+      background-color: transparent;
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+
+      &:hover {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .image-wrapper {
+    position: relative;
+    padding-left: 20px;
+
+    @media (max-width: 992px) {
+      padding-left: 0;
+      margin-top: 2rem;
+    }
+
+    .main-image {
+      border-radius: 20px;
+      box-shadow: 0 20px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: 30px;
+      left: -20px;
+      background-color: var(--surface-color);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 15px 30px color-mix(in srgb, var(--default-color), transparent 80%);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+      @media (max-width: 992px) {
+        left: 20px;
+        bottom: 20px;
+        padding: 1rem;
+      }
+
+      @media (max-width: 576px) {
+        position: static;
+        margin-top: 2rem;
+      }
+
+      .card-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        i {
+          font-size: 2rem;
+          color: var(--accent-color);
+          background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+          width: 60px;
+          height: 60px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .text {
+          h5 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+          }
+
+          span {
+            font-size: 0.9rem;
+            color: color-mix(in srgb, var(--default-color), transparent 40%);
+          }
+        }
+      }
+    }
+  }
+}
