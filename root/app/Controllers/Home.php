@@ -135,8 +135,10 @@ class Home extends BaseController
     {
         $locale = $this->request->getLocale();
         $data   = [
-            'locale' => $locale,
-            'slug'   => 'locale'
+            'locale'    => $locale,
+            'slug'      => 'locale',
+            'supported' => config('App')->supportedLocales ?? ['en'],
+            'helper'    => listSupportedLanguages()
         ];
         return view('locale', $data);
     }
@@ -190,7 +192,6 @@ class Home extends BaseController
     public function show404(): ResponseInterface|string
     {
         $method       = $this->request->getMethod();
-        $lang         = $this->request->getLocale();
         if ('post' == $method) {
             return $this->response->setStatusCode(404)->setJSON(json_encode(['status' => 404, 'message' => 'Page not found.']));
         }

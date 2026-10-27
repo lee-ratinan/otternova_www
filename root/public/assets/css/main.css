@@ -1311,7 +1311,7 @@ section,
 }
 [data-theme="dark"] .hero .hero-background .overlay {
   color: #ccc2a4;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--default-color), transparent 25%) 0%, color-mix(in srgb, var(--default-color), transparent 10%) 500%);
+  background: linear-gradient(135deg, color-mix(in srgb, #000000, transparent 25%) 0%, color-mix(in srgb, #000000, transparent 10%) 500%);
 }
 [data-theme="dark"] .hero p,
 [data-theme="dark"] .hero .feature-card span,
