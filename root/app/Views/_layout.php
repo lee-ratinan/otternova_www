@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <?php if ('en' == $locale): ?>
+    <?php if ('en-US' == $locale): ?>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <?php elseif ('th' == $locale): ?>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@
     </div><!-- End Top Bar -->
     <div class="branding d-flex align-items-cente">
         <div class="container position-relative d-flex align-items-center justify-content-between">
-            <a href="<?= base_url($locale) ?>" class="logo d-flex align-items-center">
+            <a href="<?= base_url($locale . '/home') ?>" class="logo d-flex align-items-center">
                 <img src="<?= base_url('assets/img/logo-dark.webp') ?>" alt="<?= lang('Meta.site-title') ?>">
                 <h1 class="sitename"><?= lang('Meta.site-title') ?></h1>
             </a>
@@ -93,7 +93,7 @@
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
-                <a href="<?= base_url($locale) ?>" class="logo d-flex align-items-center">
+                <a href="<?= base_url($locale . '/home') ?>" class="logo d-flex align-items-center">
                     <span class="sitename"><?= lang('Meta.site-title') ?></span>
                 </a>
                 <p><?= lang('Meta.site-footer-description') ?></p>
@@ -143,7 +143,6 @@
 </div>
 <!-- Vendor JS Files -->
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>

@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/hero-img.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-secondary.webp') ?>);">
         <div class="container position-relative">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">

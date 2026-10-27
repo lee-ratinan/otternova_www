@@ -53,8 +53,8 @@
   /* Nav Menu Dark Colors */
   --nav-color: #cccccc;
   --nav-hover-color: #c97232;
-  --nav-mobile-background-color: #cccccc;
-  --nav-dropdown-background-color: #cccccc;
+  --nav-mobile-background-color: #000704;
+  --nav-dropdown-background-color: #000704;
   --nav-dropdown-color: #cccccc;
   --nav-dropdown-hover-color: #c97232;
 }
@@ -1170,6 +1170,13 @@ h6 {
   position: absolute;
   inset: 0;
 }
+[data-theme="dark"] .page-title.dark-background:before {
+  background: color-mix(in srgb, #000704, transparent 30%);
+}
+[data-theme="dark"] .page-title.dark-background,
+[data-theme="dark"] .page-title .breadcrumbs ol li+li::before{
+  color: #ccc2a4 !important;
+}
 
 .page-title h1 {
   font-size: 42px;
@@ -1303,7 +1310,14 @@ section,
   background: linear-gradient(135deg, color-mix(in srgb, var(--background-color), transparent 25%) 0%, color-mix(in srgb, var(--background-color), transparent 10%) 500%);
 }
 [data-theme="dark"] .hero .hero-background .overlay {
+  color: #ccc2a4;
   background: linear-gradient(135deg, color-mix(in srgb, var(--default-color), transparent 25%) 0%, color-mix(in srgb, var(--default-color), transparent 10%) 500%);
+}
+[data-theme="dark"] .hero p,
+[data-theme="dark"] .hero .feature-card span,
+[data-theme="dark"] .hero .hero-stats .stat-item .stat-label
+{
+  color: #ccc2a4;
 }
 
 .hero .container {
@@ -1791,7 +1805,7 @@ section,
 
 .featured-services .services-content .subtitle {
   display: inline-block;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 94%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 50%);
   color: var(--accent-color);
   padding: 8px 16px;
   border-radius: 6px;
@@ -1870,7 +1884,7 @@ section,
 .featured-services .services-image .shape-circle {
   position: absolute;
   right: -30px;
-  top: -30px;
+  top: -40px;
   height: 180px;
   width: 180px;
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
@@ -1880,8 +1894,8 @@ section,
 
 .featured-services .services-image .shape-accent {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -30px;
+  left: -30px;
   height: 100px;
   width: 100px;
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
