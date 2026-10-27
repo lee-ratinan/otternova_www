@@ -33,6 +33,9 @@
         colorSchemeQuery.addEventListener('change', applySystemTheme);
     </script>
     <style>
+        body, .container, .section {
+            background-color: #111111 !important;
+        }
         .under-construction-img {
             max-height: 60vh;
             mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);

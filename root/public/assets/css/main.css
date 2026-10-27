@@ -14,8 +14,11 @@
 /* Fonts */
 :root {
   --default-font: "Raleway",  system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Prompt",  sans-serif;
-  --nav-font: "Prompt",  sans-serif;
+  --heading-font: "Oswald",  sans-serif;
+  --nav-font: "Oswald",  sans-serif;
+  --default-th-font: "Noto Serif Thai",  system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-th-font: "Prompt",  sans-serif;
+  --nav-th-font: "Prompt",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -48,10 +51,10 @@
   --contrast-color: #ffffff;
 
   /* Nav Menu Dark Colors */
-  --nav-color: #333333;
+  --nav-color: #cccccc;
   --nav-hover-color: #c97232;
-  --nav-mobile-background-color: #000704;
-  --nav-dropdown-background-color: #28323a;
+  --nav-mobile-background-color: #cccccc;
+  --nav-dropdown-background-color: #cccccc;
   --nav-dropdown-color: #cccccc;
   --nav-dropdown-hover-color: #c97232;
 }
@@ -101,6 +104,10 @@ body {
   font-family: var(--default-font), sans-serif;
 }
 
+body.lang-th {
+  font-family: var(--default-th-font), sans-serif !important;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -120,6 +127,15 @@ h5,
 h6 {
   color: var(--accent-color);
   font-family: var(--heading-font), sans-serif;
+}
+
+.lang-th h1,
+.lang-th h2,
+.lang-th h3,
+.lang-th h4,
+.lang-th h5,
+.lang-th h6 {
+  font-family: var(--heading-th-font), sans-serif !important;
 }
 
 /* PHP Email Form Messages
@@ -307,7 +323,7 @@ h6 {
     color: var(--nav-color);
     font-size: 14px;
     padding: 0 2px;
-    font-family: var(--nav-font), sans-serif;;
+    font-family: var(--nav-font), sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -315,6 +331,12 @@ h6 {
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
+  }
+
+  .lang-th .navmenu a,
+  .lang-th .navmenu a:focus
+  {
+    font-family: var(--nav-th-font), sans-serif !important;
   }
 
   .navmenu a i,
@@ -443,7 +465,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
-    font-family: var(--nav-font), sans-serif;;
+    font-family: var(--nav-font), sans-serif;
     font-size: 17px;
     font-weight: 500;
     display: flex;
@@ -451,6 +473,12 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+  }
+
+  .lang-th .navmenu a,
+  .lang-th .navmenu a:focus
+  {
+    font-family: var(--nav-th-font), sans-serif;
   }
 
   .navmenu a i,
@@ -950,6 +978,12 @@ h6 {
   font-family: var(--heading-font), sans-serif;
 }
 
+.lang-th .footer .footer-about .logo span,
+.lang-th .footer .footer-about p
+{
+  font-family: var(--heading-th-font), sans-serif !important;
+}
+
 .footer .social-links a {
   display: flex;
   align-items: center;
@@ -1268,6 +1302,9 @@ section,
   height: 100%;
   background: linear-gradient(135deg, color-mix(in srgb, var(--background-color), transparent 25%) 0%, color-mix(in srgb, var(--background-color), transparent 10%) 500%);
 }
+[data-theme="dark"] .hero .hero-background .overlay {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--default-color), transparent 25%) 0%, color-mix(in srgb, var(--default-color), transparent 10%) 500%);
+}
 
 .hero .container {
   position: relative;
@@ -1548,6 +1585,10 @@ section,
   color: var(--accent-color);
   margin-bottom: 0.5rem;
   font-family: var(--heading-font), sans-serif;
+}
+
+.lang-th .about .stat-item .number {
+  font-family: var(--heading-th-font), sans-serif !important;
 }
 
 .about .stat-item .label {
@@ -5386,8 +5427,12 @@ section,
   font-size: clamp(6rem, 15vw, 12rem);
   font-weight: 800;
   color: color-mix(in srgb, var(--heading-color), transparent 10%);
-  font-family: var(--heading-font);
+  font-family: var(--heading-font), sans-serif;
   line-height: 1;
+}
+
+.lang-th .error-404 .error-code {
+  font-family: var(--heading-th-font), sans-serif !important;
 }
 
 .error-404 .error-title {
