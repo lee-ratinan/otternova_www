@@ -46,14 +46,23 @@
     <div class="topbar d-flex align-items-center dark-background">
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:<?= getenv('OTTER_EMAIL') ?>"><?= getenv('OTTER_EMAIL') ?></a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span><?= formatPhoneNumber(getenv('OTTER_PHONE')) ?></span></i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
-                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <?php
+                $social = [
+                    'twitter-x' => getenv('OTTER_TWITTER'),
+                    'facebook'  => getenv('OTTER_FACEBOOK'),
+                    'instagram' => getenv('OTTER_INSTAGRAM'),
+                    'linkedin'  => getenv('OTTER_LINKEDIN'),
+                ];
+                foreach ($social as $key => $value) {
+                    if (!empty($value)) {
+                        echo '<a href="' . $value . '" class="' . $key . '"><i class="bi bi-' . $key . '"></i></a>';
+                    }
+                }
+                ?>
             </div>
         </div>
     </div><!-- End Top Bar -->
@@ -81,65 +90,50 @@
     <?= $this->renderSection('content') ?>
 </main>
 <footer id="footer" class="footer position-relative dark-background">
-
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <span class="sitename">Passion</span>
+                <a href="<?= base_url($locale) ?>" class="logo d-flex align-items-center">
+                    <span class="sitename"><?= lang('Meta.site-title') ?></span>
                 </a>
-                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                <p><?= lang('Meta.site-footer-description') ?></p>
                 <div class="social-links d-flex mt-4">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <?php
+                    foreach ($social as $key => $value) {
+                        if (!empty($value)) {
+                            echo '<a href="' . $value . '" class="' . $key . '"><i class="bi bi-' . $key . '"></i></a>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
-
             <div class="col-lg-2 col-6 footer-links">
-                <h4>Useful Links</h4>
+                <h4><?= lang('Meta.useful-links') ?></h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Terms of service</a></li>
-                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="<?= base_url($locale . '/home') ?>"><?= lang('Meta.page-title.home') ?></a></li>
+                    <li><a href="<?= base_url($locale . '/solutions') ?>"><?= lang('Meta.page-title.solutions') ?></a></li>
+                    <li><a href="<?= base_url($locale . '/pricing') ?>"><?= lang('Meta.page-title.pricing') ?></a></li>
+                    <li><a href="<?= base_url($locale . '/about-us') ?>"><?= lang('Meta.page-title.about-us') ?></a></li>
+                    <li><a href="<?= base_url($locale . '/contact') ?>"><?= lang('Meta.page-title.contact') ?></a></li>
+                    <li><a href="<?= base_url($locale . '/locale') ?>"><?= lang('Meta.change-language') ?></a></li>
                 </ul>
             </div>
-
             <div class="col-lg-2 col-6 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Product Management</a></li>
-                    <li><a href="#">Marketing</a></li>
-                    <li><a href="#">Graphic Design</a></li>
-                </ul>
             </div>
-
             <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                <h4>Contact Us</h4>
-                <p>A108 Adam Street</p>
-                <p>New York, NY 535022</p>
-                <p>United States</p>
-                <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                <p><strong>Email:</strong> <span>info@example.com</span></p>
+                <h4><?= lang('Meta.page-title.contact') ?></h4>
+                <p><i class="bi bi-phone"></i> <span><?= formatPhoneNumber(getenv('OTTER_PHONE')) ?></span></p>
+                <p><i class="bi bi-envelope"></i> <span><a href="mailto:<?= getenv('OTTER_EMAIL') ?>"><?= getenv('OTTER_EMAIL') ?></a></span></p>
             </div>
-
         </div>
     </div>
-
     <div class="container copyright text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+        <p>©2026 <span>Copyright</span> <strong class="px-1 sitename"><?= lang('Meta.site-title') ?></strong> <span>All Rights Reserved</span></p>
     </div>
 
 </footer>
-
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
 <!-- Preloader -->
 <div id="preloader">
     <div></div>
@@ -147,7 +141,6 @@
     <div></div>
     <div></div>
 </div>
-
 <!-- Vendor JS Files -->
 <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>
@@ -156,10 +149,7 @@
 <script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
-
 <!-- Main JS File -->
 <script src="<?= base_url('assets/js/main.js') ?>"></script>
-
 </body>
-
 </html>

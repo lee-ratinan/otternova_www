@@ -1,8 +1,8 @@
 <?php
 return [
-    'site-title'      => 'OtterNova',
-    'change-language' => 'Change Language',
-    'page-title'      => [
+    'site-title'              => 'OtterNova',
+    'change-language'         => 'Change Language',
+    'page-title'              => [
         'home'      => 'Home',
         'solutions' => 'Solutions',
         'pricing'   => 'Pricing',
@@ -10,7 +10,7 @@ return [
         'about-us'  => 'About Us',
         'locale'    => 'Locale'
     ],
-    'description'     => [
+    'description'             => [
         'home'      => 'Home Description',
         'solutions' => 'Solutions Description',
         'pricing'   => 'Pricing Description',
@@ -18,7 +18,7 @@ return [
         'about-us'  => 'About Us Description',
         'locale'    => 'Locale Description'
     ],
-    'keywords'        => [
+    'keywords'                => [
         'home'      => 'Home Keywords',
         'solutions' => 'Solutions Keywords',
         'pricing'   => 'Pricing Keywords',
@@ -26,4 +26,6 @@ return [
         'about-us'  => 'About Us Keywords',
         'locale'    => 'Locale Keywords'
     ],
+    'useful-links'            => 'Useful Links',
+    'site-footer-description' => 'Next-gen business solutions that you can trust.'
 ];
