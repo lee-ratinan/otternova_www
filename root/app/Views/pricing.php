@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-secondary.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
         <div class="container position-relative">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -12,108 +12,60 @@
         </div>
     </div>
     <section id="pricing" class="pricing section">
-
-        <!-- Section Title -->
-        <div class="container section-title">
-            <h2>Pricing</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
-
         <div class="container">
-
             <div class="row gy-4 justify-content-center">
-
-                <!-- Basic Plan -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="pricing-item">
-                        <div class="pricing-icon">
-                            <i class="bi bi-star"></i>
+                <?php foreach ($plans as $planSlug => $plan): ?>
+                    <!-- <?= esc($planSlug) ?> plan -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-item<?= $plan['recommended'] ? ' featured' : '' ?>">
+                            <?php if ($plan['recommended']): ?>
+                                <div class="pricing-badge"><?= lang('Pricing.recommended') ?></div>
+                            <?php endif; ?>
+                            <div class="pricing-icon">
+                                <i class="bi bi-<?= esc($plan['icon'], 'attr') ?>"></i>
+                            </div>
+                            <h3><?= lang('Pricing.plans.' . $planSlug . '.name') ?></h3>
+                            <?php if ('free' != $planSlug) : ?>
+                            <div class="price">
+                                <span class="currency"><?= $pricing[$countryCode]['currencyCode'] ?></span><?= number_format($plan['price'][0]) ?><span class="period"><?= lang('Pricing.per-month') ?></span>
+                            </div>
+                            <?php
+                            $fullYearPricing = $plan['price'][0] * 12;
+                            $saving          = ($fullYearPricing - $plan['price'][1]) / $fullYearPricing * 100;
+                            ?>
+                            <h4><?= lang('Pricing.or') ?> <?= $pricing[$countryCode]['currencyCode'] ?><?= number_format($plan['price'][1]) ?><?= lang('Pricing.per-year') ?></h4>
+                            <p class="description"><?= lang('Pricing.saving', [$pricing[$countryCode]['currencyCode'], number_format($fullYearPricing), number_format($saving, 2)]) ?></p>
+                            <?php else: ?>
+                                <div class="price">
+                                    <span class="currency"><?= $pricing[$countryCode]['currencyCode'] ?></span>0<span class="period"><?= lang('Pricing.forever') ?></span>
+                                </div>
+                            <?php endif; ?>
+                            <p class="description"><?= lang('Pricing.plans.' . $planSlug . '.description') ?></p>
+                            <ul class="features-list">
+                                <?php foreach (lang('Pricing.plans.' . $planSlug . '.features') as $feature): ?>
+                                    <li><i class="bi bi-check2"></i> <?= $feature ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <a href="<?= getenv('LINK_CLIENT') ?>" class="btn-pricing"><?= lang('Pricing.buy-now') ?></a>
                         </div>
-                        <h3>Standard</h3>
-                        <div class="price">
-                            <span class="currency">$</span>9<span class="period">/month</span>
-                        </div>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-                        <ul class="features-list">
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Vestibulum ante ipsum primis
-                            </li>
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Fusce vulputate eleifend
-                            </li>
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Nullam ac tortor vitae
-                            </li>
-                        </ul>
-                        <a href="#" class="btn-pricing">Buy Now</a>
-                    </div>
-                </div><!-- End Basic Plan -->
-
-                <!-- Professional Plan -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="pricing-item featured">
-                        <div class="pricing-badge">Recommended</div>
-                        <div class="pricing-icon">
-                            <i class="bi bi-stars"></i>
-                        </div>
-                        <h3>Professional</h3>
-                        <div class="price">
-                            <span class="currency">$</span>29<span class="period">/month</span>
-                        </div>
-                        <p class="description">Maecenas tempus tellus eget condimentum rhoncus semper.</p>
-                        <ul class="features-list">
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Donec quam felis ultricies
-                            </li>
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Aenean massa imperdiet
-                            </li>
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Cras dapibus vivamus
-                            </li>
-                        </ul>
-                        <a href="#" class="btn-pricing">Buy Now</a>
-                    </div>
-                </div><!-- End Professional Plan -->
-
-                <!-- Ultimate Plan -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="pricing-item">
-                        <div class="pricing-icon">
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <h3>Ultimate</h3>
-                        <div class="price">
-                            <span class="currency">$</span>49<span class="period">/month</span>
-                        </div>
-                        <p class="description">Etiam rhoncus maecenas tempus tellus eget condimentum.</p>
-                        <ul class="features-list">
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Phasellus viverra nulla
-                            </li>
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Quisque rutrum aenean
-                            </li>
-                            <li>
-                                <i class="bi bi-check2"></i>
-                                Etiam ultricies nisi vel
-                            </li>
-                        </ul>
-                        <a href="#" class="btn-pricing">Buy Now</a>
-                    </div>
-                </div><!-- End Ultimate Plan -->
-
+                    </div><!-- End <?= esc($planSlug) ?> plan -->
+                <?php endforeach; ?>
             </div>
-
+            <div class="row mt-5 g-3 justify-content-center">
+                <div class="col text-center">
+                    <p><?= lang('Pricing.check-other-country') ?></p>
+                    <?php foreach ($pricing as $keyCode => $values) : ?>
+                        <a class="btn btn<?= ($keyCode == $countryCode ? '' : '-outline') ?>-warning" href="<?= base_url($locale . '/pricing/' . $keyCode) ?>">
+                            <?php if ('XX' == $keyCode) : ?>
+                                <i class="bi bi-globe"></i>
+                            <?php else: ?>
+                                <span class="fi fi-<?= strtolower($keyCode) ?>"></span>
+                            <?php endif; ?>
+                            <?= lang('Pricing.plan-country.' . $values['slug']) ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
-
     </section>
 <?php $this->endSection() ?>

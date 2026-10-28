@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-secondary.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
         <div class="container position-relative">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -101,123 +101,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row mt-5" data-aos-duration="1000">
-                <div class="col-12">
-                    <div class="services-slider swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
-                        <script type="application/json" class="swiper-config">
-                            {
-                                "slidesPerView": 3,
-                                "spaceBetween": 20,
-                                "loop": true,
-                                "speed": 600,
-                                "autoplay": {
-                                    "delay": 5000
-                                },
-                                "navigation": {
-                                    "nextEl": ".swiper-nav-next",
-                                    "prevEl": ".swiper-nav-prev"
-                                },
-                                "breakpoints": {
-                                    "320": {
-                                        "slidesPerView": 1
-                                    },
-                                    "768": {
-                                        "slidesPerView": 2
-                                    },
-                                    "992": {
-                                        "slidesPerView": 3
-                                    }
-                                }
-                            }
-                        </script>
-                        <div class="swiper-wrapper" id="swiper-wrapper-9081c882d9035526" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-877.333px, 0px, 0px); transition-delay: 0ms;">
-
-                            <div class="swiper-slide" role="group" aria-label="1 / 5" data-swiper-slide-index="0" style="width: 418.667px; margin-right: 20px;">
-                                <div class="service-card">
-                                    <div class="icon-box">
-                                        <i class="bi bi-bar-chart-fill"></i>
-                                    </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                                    <div class="content">
-                                        <h4><a href="#">Financial Strategy Development</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                                        <div class="service-number">01</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide swiper-slide-prev" role="group" aria-label="2 / 5" data-swiper-slide-index="1" style="width: 418.667px; margin-right: 20px;">
-                                <div class="service-card">
-                                    <div class="icon-box">
-                                        <i class="bi bi-graph-up-arrow"></i>
-                                    </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                                    <div class="content">
-                                        <h4><a href="#">Market Expansion Advisory</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                                        <div class="service-number">02</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide swiper-slide-active" role="group" aria-label="3 / 5" data-swiper-slide-index="2" style="width: 418.667px; margin-right: 20px;">
-                                <div class="service-card">
-                                    <div class="icon-box">
-                                        <i class="bi bi-shield-check"></i>
-                                    </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                                    <div class="content">
-                                        <h4><a href="#">Risk Management Solutions</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                                        <div class="service-number">03</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 5" data-swiper-slide-index="3" style="width: 418.667px; margin-right: 20px;">
-                                <div class="service-card">
-                                    <div class="icon-box">
-                                        <i class="bi bi-lightbulb-fill"></i>
-                                    </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                                    <div class="content">
-                                        <h4><a href="#">Innovation &amp; Digital Transformation</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                                        <div class="service-number">04</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="width: 418.667px; margin-right: 20px;">
-                                <div class="service-card">
-                                    <div class="icon-box">
-                                        <i class="bi bi-people-fill"></i>
-                                    </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                                    <div class="content">
-                                        <h4><a href="#">Talent Management Strategy</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                                        <div class="service-number">05</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="swiper-navigation">
-                        <button class="swiper-nav-prev" tabindex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-9081c882d9035526"><i class="bi bi-chevron-left"></i></button>
-                        <button class="swiper-nav-next" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-9081c882d9035526"><i class="bi bi-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
     </section>
 <?php $this->endSection() ?>

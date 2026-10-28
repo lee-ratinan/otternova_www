@@ -88,13 +88,79 @@ class Home extends BaseController
      * @param string $countryCode
      * @return string
      */
-    public function pricing(string $countryCode = 'TH'): string
+    public function pricing(string $countryCode = ''): string
     {
         $locale = $this->request->getLocale();
-        $data   = [
+        if (empty($countryCode)) {
+            $countryCode = 'XX';
+            if ('th' == $locale) {
+                $countryCode = 'TH';
+            }
+        }
+        $pricing = [
+            'XX' => [
+                'slug'         => 'global',
+                'currencyCode' => '<small>US</small>$',
+                'free'         => [0, 0],
+                'boost'        => [9, 90],
+                'velocity'     => [19, 190],
+                'quantum'      => [39, 390]
+            ],
+            'TH' => [
+                'slug'         => 'thailand',
+                'currencyCode' => '฿',
+                'free'         => [0, 0],
+                'boost'        => [299, 2990],
+                'velocity'     => [599, 5990],
+                'quantum'      => [1290, 12900]
+            ]
+        ];
+        /**
+         * Plans shown on the pricing page, in display order.
+         *
+         * To add, remove or change a plan, edit this array (and the matching
+         * 'plans.<slug>' block in app/Language/<locale>/Pricing.php).
+         *
+         *  - The array key is the slug used to build the language keys
+         *    (name, description, features.<feature-key>).
+         *  - 'icon'        : Bootstrap Icons name, without the "bi-" prefix
+         *  - 'price'       : monthly price (number only; the currency symbol and
+         *                    "/month" label come from the language file)
+         *  - 'recommended' : true shows the "Recommended" badge and the featured style
+         *  - 'features'    : feature keys, in display order. Each one needs a matching
+         *                    entry under 'plans.<slug>.features' in the language file.
+         *
+         * This array can be moved to the controller or a config file and passed in
+         * as $plans without changing the markup below.
+         */
+        $plans   = [
+            'boost'    => [
+                'icon'        => 'star',
+                'price'       => $pricing[$countryCode]['boost'],
+                'recommended' => false
+            ],
+            'velocity' => [
+                'icon'        => 'stars',
+                'price'       => $pricing[$countryCode]['velocity'],
+                'recommended' => true
+            ],
+            'quantum'  => [
+                'icon'        => 'star-fill',
+                'price'       => $pricing[$countryCode]['quantum'],
+                'recommended' => false
+            ],
+            'free'     => [
+                'icon'        => 'piggy-bank',
+                'price'       => $pricing[$countryCode]['free'],
+                'recommended' => false
+            ],
+        ];
+        $data    = [
             'locale'      => $locale,
             'countryCode' => $countryCode,
-            'slug'        => 'pricing'
+            'slug'        => 'pricing',
+            'pricing'     => $pricing,
+            'plans'       => $plans
         ];
         return view('pricing', $data);
     }

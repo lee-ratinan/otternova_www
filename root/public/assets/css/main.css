@@ -2890,6 +2890,7 @@ section,
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+  text-align: left;
 }
 
 .pricing .pricing-item .features-list li i {
