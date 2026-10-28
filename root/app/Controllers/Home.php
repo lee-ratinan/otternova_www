@@ -91,6 +91,7 @@ class Home extends BaseController
     public function pricing(string $countryCode = ''): string
     {
         $locale = $this->request->getLocale();
+        $uri    = 'pricing/' . $countryCode;
         if (empty($countryCode)) {
             $countryCode = 'XX';
             if ('th' == $locale) {
@@ -159,6 +160,7 @@ class Home extends BaseController
             'locale'      => $locale,
             'countryCode' => $countryCode,
             'slug'        => 'pricing',
+            'uri'         => $uri,
             'pricing'     => $pricing,
             'plans'       => $plans
         ];

@@ -6,6 +6,13 @@
     <title><?= lang('Meta.page-title.' . $slug) ?> | <?= lang('Meta.site-title') ?></title>
     <meta name="description" content="<?= lang('Meta.description.' . $slug) ?>">
     <meta name="keywords" content="<?= lang('Meta.keywords.' . $slug) ?>">
+    <meta name="author" content="OtterNova Team">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="<?= lang('Meta.page-title.' . $slug) ?> | <?= lang('Meta.site-title') ?>">
+    <meta property="og:description" content="<?= lang('Meta.description.' . $slug) ?>">
+    <meta property="og:image" content="<?= base_url('assets/img/otternova-greeting.webp') ?>">
+    <meta property="og:url" content="<?= current_url() ?>">
+    <meta property="og:type" content="website" />
     <!-- Favicons -->
     <link href="<?= base_url('assets/img/logo.webp') ?>" rel="icon">
     <link href="<?= base_url('assets/img/logo.webp') ?>" rel="apple-touch-icon">
@@ -26,6 +33,16 @@
     <link href="<?= base_url('assets/vendor/flag-icon/css/flag-icons.min.css') ?>" rel="stylesheet">
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <!-- Link Languages -->
+    <?php
+    $languages = listSupportedLanguages();
+    $url_part  = $uri ?? $slug;
+    ?>
+    <?php foreach ($languages as $key => $value): ?>
+        <link rel="alternate" hreflang="<?= $key ?>" href="<?= base_url($key . '/' . $url_part) ?>">
+    <?php endforeach; ?>
+    <link rel="alternate" hreflang="x-default" href="<?= base_url($url_part) ?>">
+    <link rel="canonical" href="<?= current_url() ?>">
     <!-- =======================================================
     * Template Name: Passion
     * Template URL: https://bootstrapmade.com/passion-bootstrap-template/
@@ -78,7 +95,6 @@
                     <li class="dropdown"><a href="<?= base_url($locale . '/locale') ?>"><span><?= lang('Meta.change-language') ?></span> <i class="bi bi-translate toggle-dropdown"></i></a>
                         <ul>
                             <?php
-                            $languages = listSupportedLanguages();
                             foreach ($languages as $key => $value) {
                                 $flag = strtolower(substr($key, -2));
                                 echo '<li><a href="' . base_url($key . '/home') . '">' . $value . ' <span class="fi fi-' . $flag . '"></i></a></li>';
@@ -131,13 +147,15 @@
                 <h4><?= lang('Meta.page-title.contact') ?></h4>
                 <p><i class="bi bi-phone"></i> <span><?= formatPhoneNumber(getenv('OTTER_PHONE')) ?></span></p>
                 <p><i class="bi bi-envelope"></i> <span><a href="mailto:<?= getenv('OTTER_EMAIL') ?>"><?= getenv('OTTER_EMAIL') ?></a></span></p>
+                <hr/>
+                <p>OtterNova | ทะเบียนพาณิชย์เลขที่ XXXXXXXXXXXXX</p>
+                <div>[DBD logo area]</div>
             </div>
         </div>
     </div>
     <div class="container copyright text-center mt-4">
         <p>©2026 <span>Copyright</span> <strong class="px-1 sitename"><?= lang('Meta.site-title') ?></strong> <span>All Rights Reserved</span></p>
     </div>
-
 </footer>
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
