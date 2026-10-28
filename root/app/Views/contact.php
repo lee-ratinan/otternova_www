@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-secondary.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
         <div class="container position-relative">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -12,97 +12,100 @@
         </div>
     </div>
     <section id="contact" class="contact section">
-        <!-- Section Title -->
-        <div class="container section-title">
-            <h2>Contact</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div><!-- End Section Title -->
-
         <div class="container">
-            <div class="contact-main-wrapper">
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="contact-form-container">
+                        <h3><?= lang('Contact.form.title') ?></h3>
+                        <p><?= lang('Contact.form.subtitle') ?></p>
+                        <form action="<?= base_url('submit-contact-form') ?>" method="post" class="php-email-form">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="name"></label><input type="text" name="name" class="form-control" id="name" placeholder="<?= lang('Contact.form.name') ?>" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <label for="email"></label><input type="email" class="form-control" name="email" id="email" placeholder="<?= lang('Contact.form.email') ?>" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <label for="phone"></label><input type="tel" class="form-control" name="phone" id="phone" placeholder="<?= lang('Contact.form.phone') ?>" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <label for="subject"></label>
+                                    <select id="subject" name="subject" class="form-control" required>
+                                        <option disabled><?= lang('Contact.form.subject-options.select') ?></option>
+                                        <option value="general"><?= lang('Contact.form.subject-options.general') ?></option>
+                                        <option value="technical"><?= lang('Contact.form.subject-options.technical') ?></option>
+                                        <option value="sales"><?= lang('Contact.form.subject-options.sales') ?></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message"></label>
+                                <textarea class="form-control" name="message" id="message" rows="5" placeholder="<?= lang('Contact.form.message') ?>" required></textarea>
+                            </div>
+                            <input type="hidden" name="locale" value="<?= $locale ?>">
+                            <div class="my-3">
+                                <div class="loading"><?= lang('Contact.form.loading') ?></div>
+                                <div class="error-message"></div>
+                                <div class="sent-message"><?= lang('Contact.form.complete') ?></div>
+                            </div>
+                            <div class="form-submit">
+                                <button class="w-100" type="submit"><?= lang('Contact.form.send') ?></button>
+                            </div>
+                            <p class="text-center mt-3"><?= lang('Contact.form.disclaimer') ?></p>
+                        </form>
+                    </div>
                 </div>
-
-                <div class="contact-content">
+                <div class="col-12 col-lg-6">
                     <div class="contact-cards-container">
-                        <div class="contact-card">
-                            <div class="icon-box">
-                                <i class="bi bi-geo-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Location</h4>
-                                <p>8721 Broadway Avenue, New York, NY 10023</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
+                        <div class="contact-card w-100">
                             <div class="icon-box">
                                 <i class="bi bi-envelope"></i>
                             </div>
                             <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>info@examplecompany.com</p>
+                                <h4><?= lang('Contact.info.email') ?></h4>
+                                <p><?= getenv('OTTER_EMAIL') ?></p>
                             </div>
                         </div>
-
-                        <div class="contact-card">
-                            <div class="icon-box">
-                                <i class="bi bi-telephone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Call</h4>
-                                <p>+1 (212) 555-7890</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-card">
+                        <div class="contact-card w-100">
                             <div class="icon-box">
                                 <i class="bi bi-clock"></i>
                             </div>
                             <div class="contact-text">
-                                <h4>Open Hours</h4>
-                                <p>Monday-Friday: 9AM - 6PM</p>
+                                <h4><?= lang('Contact.info.open') ?></h4>
+                                <p><?= lang('Contact.info.open-detail') ?></p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="contact-form-container">
-                        <h3>Get in Touch</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing.</p>
-
-                        <form action="forms/contact.php" method="post" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                                </div>
+                        <div class="contact-card w-100">
+                            <div class="icon-box">
+                                <i class="bi bi-share"></i>
                             </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                            <div class="contact-text">
+                                <h4><?= lang('Contact.info.social-media') ?></h4>
+                                <?php
+                                $social = listOtterSocialMedia();
+                                foreach ($social as $key => $value) {
+                                    if (!empty($value)) {
+                                        echo '<a href="' . $value . '" class="' . $key . '"><i class="bi bi-' . $key . ' me-3"></i> ' . lang('Contact.social-media.' . $key) . '</a><br/>';
+                                    }
+                                }
+                                ?>
                             </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required=""></textarea>
-                            </div>
-
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-
-                            <div class="form-submit">
-                                <button type="submit">Send Message</button>
-                                <div class="social-links">
-                                    <a href="#"><i class="bi bi-twitter"></i></a>
-                                    <a href="#"><i class="bi bi-facebook"></i></a>
-                                    <a href="#"><i class="bi bi-instagram"></i></a>
-                                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="contact-card w-100">
+                            <div class="display-6"><i class="bi bi-shield-check"></i></div>
+                            <p>
+                                <b><?= lang('Contact.text.shield-1') ?></b><br/>
+                                <?= lang('Contact.text.shield-2') ?>
+                            </p>
+                        </div>
+                        <div class="contact-card w-100">
+                            <div class="display-6"><i class="bi bi-clock-history"></i></div>
+                            <p>
+                                <b><?= lang('Contact.text.clock-1') ?></b><br/>
+                                <?= lang('Contact.text.clock-2') ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

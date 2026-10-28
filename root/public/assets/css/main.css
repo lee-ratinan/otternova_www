@@ -3930,12 +3930,6 @@ section,
   gap: 15px;
 }
 
-@media (min-width: 576px) {
-  .contact .contact-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .contact .contact-card {
   background-color: var(--surface-color);
   padding: 20px;

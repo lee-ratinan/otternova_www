@@ -163,7 +163,7 @@ class Home extends BaseController
             $phone    = $this->request->getPost('phone');
             $phone     = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
             $subject  = $this->request->getPost('subject');
-            $subject  = lang('Contact.form.fields.subject.' . $subject);
+            $subject  = lang('Contact.form.subject-options.' . $subject);
             $message  = $this->request->getPost('message');
             $message  = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
             $date     = date('M d, Y');
@@ -177,18 +177,29 @@ class Home extends BaseController
             $email->setTo($to);
             $email->setFrom($no_reply);
             $email->setReplyTo($from);
-            $email->setSubject("[OtterNova][$subject] From: $name - $date");
-            $email->setMessage("Contact Form Submission\n\nCompany: $company\n\nName: $name\nEmail: $from\nPhone: $phone\nMessage: $message\nLanguage: $locale\n\nThis email is system generated.\nOtterNova");
+            $email_subject = "[OtterNova][$subject] From: $name - $date";
+            $email_body    = "Contact Form Submission\n\nName: $name\nEmail: $from\nPhone: $phone\nMessage: $message\nLanguage: $locale\n\nThis email is system generated.\nOtterNova";
+            $email->setSubject($email_subject);
+            $email->setMessage($email_body);
+            log_message('debug', $email_subject);
+            log_message('debug', $email_body);
             if ($email->send()) {
+                log_message('debug', "Email is sent.");
                 return $this->response->setBody('OK');
             } else {
+                log_message('error', "Email not sent: " . $email->printDebugger());
                 return $this->response->setBody(lang('Contact.form.error'));
             }
         } catch (\Exception $e) {
-            return $this->response->setBody(lang('Contact.form.error'));
+            log_message('error', "Email not sent: " . $e->getMessage());
+            return $this->response->setBody(lang('Contact.form.error') . ': ' . $e->getMessage());
         }
     }
 
+    /**
+     * Not found page
+     * @return ResponseInterface|string
+     */
     public function show404(): ResponseInterface|string
     {
         $method       = $this->request->getMethod();
