@@ -1,28 +1,5 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-<?php
-/**
- * Team members shown in the carousel.
- *
- * To add or remove a member, edit this array (and add/remove the matching
- * 'team.members.<slug>' block in app/Language/<locale>/AboutUs.php).
- *
- *  - The array key is the slug used to build the language keys
- *    (name, role, bio).
- *  - 'image'   : file name inside assets/img/person/
- *  - 'socials' : optional. Bootstrap Icons name => URL. Falls back to
- *                $defaultSocials. Entries with an empty URL are not rendered.
- *
- * This array can be moved to the controller or a config file and passed in
- * as $teamMembers without changing the markup below.
- */
-$defaultSocials = [];
-$teamMembers = [
-    'fauzi' => ['image' => 'leadership-fauzi.webp'],
-    'eikin' => ['image' => 'leadership-eikin.webp', 'socials' => ['linkedin' => 'https://www.linkedin.com/in/ratinanlee', 'instagram' => 'https://www.instagram.com/ratinanlee/', 'globe' => 'https://lee.ratinan.com']],
-    'jate'  => ['image' => 'leadership-jate.webp'],
-];
-?>
     <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
         <div class="container position-relative">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
@@ -138,8 +115,6 @@ $teamMembers = [
                 <div class="swiper-button-prev" aria-label="<?= lang('AboutUs.team.previous-slide') ?>"></div>
                 <div class="swiper-button-next" aria-label="<?= lang('AboutUs.team.next-slide') ?>"></div>
             </div>
-
         </div>
-
     </section>
 <?php $this->endSection() ?>

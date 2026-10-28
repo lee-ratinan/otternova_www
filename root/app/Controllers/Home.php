@@ -119,10 +119,41 @@ class Home extends BaseController
      */
     public function aboutUs(): string
     {
+        /**
+         * Team members shown in the carousel.
+         *
+         * To add or remove a member, edit this array (and add/remove the matching
+         * 'team.members.<slug>' block in app/Language/<locale>/AboutUs.php).
+         *
+         *  - The array key is the slug used to build the language keys
+         *    (name, role, bio).
+         *  - 'image'   : file name inside assets/img/person/
+         *  - 'socials' : optional. Bootstrap Icons name => URL. Falls back to
+         *                $defaultSocials. Entries with an empty URL are not rendered.
+         *
+         * This array can be moved to the controller or a config file and passed in
+         * as $teamMembers without changing the markup below.
+         */
         $locale = $this->request->getLocale();
         $data   = [
-            'locale' => $locale,
-            'slug'   => 'about-us'
+            'locale'         => $locale,
+            'slug'           => 'about-us',
+            'defaultSocials' => [],
+            'teamMembers'    => [
+                'fauzi' => [
+                    'image' => 'leadership-fauzi.webp'
+                ],
+                'eikin' => [
+                    'image'   => 'leadership-eikin.webp',
+                    'socials' => [
+                        'linkedin'  => 'https://www.linkedin.com/in/ratinanlee',
+                        'instagram' => 'https://www.instagram.com/ratinanlee/', 'globe' => 'https://lee.ratinan.com'
+                    ]
+                ],
+                'jate'  => [
+                    'image' => 'leadership-jate.webp'
+                ],
+            ]
         ];
         return view('aboutUs', $data);
     }
