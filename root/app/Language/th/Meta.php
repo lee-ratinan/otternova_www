@@ -35,4 +35,9 @@ return [
     'useful-links'            => 'ลิงก์สำคัญ',
     'site-footer-description' => 'โซลูชั่นสำหรับธุรกิจเน็กต์เจ็นที่คุณไว้ใจได้',
     'toggle-mode'             => 'สลับโหมดสว่าง/มืด',
+    'links'                   => [
+        'other-links' => 'ลิงก์อื่นๆ',
+        'client'      => 'ระบบหลังบ้าน',
+        'marketplace' => 'มาร์เก็ตเพลส',
+    ]
 ];

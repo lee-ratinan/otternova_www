@@ -12,7 +12,7 @@ return [
         'terms-of-service' => 'Terms of Service',
         'privacy-policy'   => 'Privacy Policy',
     ],
-    'description' => [
+    'description'             => [
         'home'             => 'Build your online presence with AI. OtterNova lets you launch a website, take bookings, and sell products from one affordable platform. Start for free.',
         'solutions'        => 'Explore OtterNova’s all-in-one tools: website builder, appointment and group-session booking, product sales, easy payments, a smart dashboard, and reports.',
         'pricing'          => 'Simple, affordable OtterNova plans for every stage of growth, from a free-forever plan to Quantum. Compare features and choose the plan that fits.',
@@ -22,7 +22,7 @@ return [
         'terms-of-service' => 'Read the terms that apply when you use OtterNova’s platform, including the website builder, service booking, and product-selling features.',
         'privacy-policy'   => 'Learn how OtterNova collects, uses, and protects your personal information when you use our website and platform services.',
     ],
-    'keywords' => [
+    'keywords'                => [
         'home'             => 'OtterNova, AI for business, online presence, website builder, online booking system, e-commerce platform, small business platform, sell products online, service booking',
         'solutions'        => 'OtterNova solutions, website builder, appointment booking, group session booking, sell products online, online payments, business dashboard, booking reports, service business software',
         'pricing'          => 'OtterNova pricing, free website builder, booking software pricing, small business plans, subscription plans, free plan, Boost plan, Velocity plan, Quantum plan',
@@ -35,4 +35,9 @@ return [
     'useful-links'            => 'Useful Links',
     'site-footer-description' => 'Next-gen business solutions that you can trust.',
     'toggle-mode'             => 'Toggle dark/light mode',
+    'links'                   => [
+        'other-links' => 'Other links',
+        'client'      => 'Client System',
+        'marketplace' => 'Marketplace',
+    ]
 ];

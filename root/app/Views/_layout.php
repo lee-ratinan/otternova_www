@@ -191,10 +191,14 @@
                 </ul>
             </div>
             <div class="col-lg-2 col-6 footer-links">
+                <h4><?= lang('Meta.links.other-links') ?></h4>
+                <ul>
+                    <li><a href="<?= getenv('LINK_CLIENT') ?>"><?= lang('Meta.links.client') ?></a></li>
+                    <li><a href="<?= getenv('LINK_MART') ?>"><?= lang('Meta.links.marketplace') ?></a></li>
+                </ul>
             </div>
             <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                 <h4><?= lang('Meta.page-title.contact') ?></h4>
-                <p><i class="bi bi-phone"></i> <span><?= formatPhoneNumber(getenv('OTTER_PHONE')) ?></span></p>
                 <p><i class="bi bi-envelope"></i> <span><a href="mailto:<?= getenv('OTTER_EMAIL') ?>"><?= getenv('OTTER_EMAIL') ?></a></span></p>
                 <hr/>
                 <p>OtterNova | ทะเบียนพาณิชย์เลขที่ XXXXXXXXXXXXX</p>
