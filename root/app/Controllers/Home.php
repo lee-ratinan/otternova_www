@@ -270,6 +270,44 @@ class Home extends BaseController
         return view('privacyPolicy', $data);
     }
 
+    public function siteMap(): ResponseInterface
+    {
+        $languages  = listSupportedLanguages();
+        $main_pages = [
+            ['/', '2026-10-28', 'monthly', '1.0'],
+            ['/home', '2026-10-28', 'monthly', '1.0'],
+            ['/solutions', '2026-10-28', 'monthly', '0.9'],
+            ['/pricing', '2026-10-28', 'monthly', '0.9'],
+            ['/pricing/TH', '2026-10-28', 'monthly', '0.9'],
+            ['/contact', '2026-10-28', 'monthly', '0.8'],
+            ['/about-us', '2026-10-28', 'monthly', '0.8'],
+            ['/locale', '2026-10-28', 'monthly', '0.7'],
+            ['/terms-of-service', '2026-10-28', 'monthly', '0.5'],
+            ['/privacy-policy', '2026-10-28', 'monthly', '0.5']
+        ];
+        $xml        = [];
+        foreach ($languages as $lang => $value) {
+            foreach ($main_pages as $page) {
+                $xml[] = [
+                    'loc'        => base_url($lang . $page[0]),
+                    'lastmod'    => $page[1],
+                    'changefreq' => $page[2],
+                    'priority'   => $page[3],
+                ];
+            }
+        }
+        $final_xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">';
+        foreach ($xml as $item) {
+            $final_xml .= '<url>';
+            foreach ($item as $key => $value) {
+                $final_xml .= '<' . $key . '>' . $value . '</' . $key . '>';
+            }
+            $final_xml .= '</url>';
+        }
+        $final_xml .= '</urlset>';
+        return $this->response->setXML($final_xml);
+    }
+
     /**
      * Submit contact form via email
      * @return ResponseInterface

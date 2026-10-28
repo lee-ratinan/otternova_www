@@ -12,6 +12,7 @@ $routes->get('/about-us', 'Home::aboutUs');
 $routes->get('/locale', 'Home::locale');
 $routes->get('/terms-of-service', 'Home::termsOfService');
 $routes->get('/privacy-policy', 'Home::privacyPolicy');
+$routes->get('/sitemap.xml', 'Home::siteMap');
 
 // POST
 $routes->post('/submit-contact-form', 'Home::submitContactForm');
