@@ -186,7 +186,10 @@ class Home extends BaseController
             $to       = getenv('CONTACT_FORM_EMAIL');
             $no_reply = getenv('NO_REPLY_EMAIL');
             $company  = $this->request->getPost('company-name');
-            $company  = htmlspecialchars($company, ENT_QUOTES, 'UTF-8');
+            if (!empty($company)) {
+                log_message('error', "Contact form is triggered with company data, ignored it. Company name: $company.");
+                return $this->response->setBody(lang('Contact.form.error'));
+            }
             $name     = $this->request->getPost('name');
             $name     = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
             $from     = $this->request->getPost('email');
