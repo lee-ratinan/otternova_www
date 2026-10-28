@@ -154,7 +154,10 @@
         </div>
     </div>
     <div class="container copyright text-center mt-4">
-        <p>©2026 <span>Copyright</span> <strong class="px-1 sitename"><?= lang('Meta.site-title') ?></strong> <span>All Rights Reserved</span></p>
+        <p>
+            <span>Copyright © 2025-<?= date('Y') ?></span> <strong class="px-1 sitename"><?= lang('Meta.site-title') ?></strong> <span>All Rights Reserved</span> |
+            <a href="<?= base_url($locale . '/terms-of-service') ?>"><?= lang('Meta.page-title.terms-of-service') ?></a> | <a href="<?= base_url($locale . '/privacy-policy') ?>"><?= lang('Meta.page-title.privacy-policy') ?></a>
+        </p>
     </div>
 </footer>
 <!-- Scroll Top -->

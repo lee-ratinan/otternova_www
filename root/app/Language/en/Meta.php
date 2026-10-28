@@ -3,12 +3,14 @@ return [
     'site-title'              => 'OtterNova',
     'change-language'         => 'Change Language',
     'page-title'              => [
-        'home'      => 'Home',
-        'solutions' => 'Solutions',
-        'pricing'   => 'Pricing',
-        'contact'   => 'Contact',
-        'about-us'  => 'About Us',
-        'locale'    => 'Locale'
+        'home'             => 'Home',
+        'solutions'        => 'Solutions',
+        'pricing'          => 'Pricing',
+        'contact'          => 'Contact',
+        'about-us'         => 'About Us',
+        'locale'           => 'Locale',
+        'terms-of-service' => 'Terms of Service',
+        'privacy-policy'   => 'Privacy Policy',
     ],
     'description'             => [
         'home'      => 'Home Description',

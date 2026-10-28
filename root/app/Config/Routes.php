@@ -10,6 +10,8 @@ $routes->get('/pricing/(:any)', 'Home::pricing/$1');
 $routes->get('/contact', 'Home::contact');
 $routes->get('/about-us', 'Home::aboutUs');
 $routes->get('/locale', 'Home::locale');
+$routes->get('/terms-of-service', 'Home::termsOfService');
+$routes->get('/privacy-policy', 'Home::privacyPolicy');
 
 // POST
 $routes->post('/submit-contact-form', 'Home::submitContactForm');
@@ -22,6 +24,8 @@ $routes->group('{locale}', ['filter' => 'localeGuard'], static function($routes)
     $routes->get('contact', 'Home::contact');
     $routes->get('about-us', 'Home::aboutUs');
     $routes->get('locale', 'Home::locale');
+    $routes->get('terms-of-service', 'Home::termsOfService');
+    $routes->get('privacy-policy', 'Home::privacyPolicy');
 });
 $routes->get('/', 'Home::underConstruction');
 $routes->set404Override('App\Controllers\Home::show404');

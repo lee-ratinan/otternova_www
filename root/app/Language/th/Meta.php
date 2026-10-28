@@ -3,12 +3,14 @@ return [
     'site-title'              => 'ออทเทอร์โนวา',
     'change-language'         => 'เปลี่ยนภาษา',
     'page-title'              => [
-        'home'      => 'หน้าแรก',
-        'solutions' => 'โซลูชั่น',
-        'pricing'   => 'ราคา',
-        'contact'   => 'ติดต่อเรา',
-        'about-us'  => 'เกี่ยวกับเรา',
-        'locale'    => 'เปลี่ยนภาษา'
+        'home'             => 'หน้าแรก',
+        'solutions'        => 'โซลูชั่น',
+        'pricing'          => 'ราคา',
+        'contact'          => 'ติดต่อเรา',
+        'about-us'         => 'เกี่ยวกับเรา',
+        'locale'           => 'เปลี่ยนภาษา',
+        'terms-of-service' => 'เงื่อนไขการใช้บริการ',
+        'privacy-policy'   => 'นโยบายความเป็นส่วนตัว',
     ],
     'description'             => [
         'home'      => 'Home Description',

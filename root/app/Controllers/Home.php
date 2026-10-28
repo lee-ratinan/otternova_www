@@ -243,6 +243,34 @@ class Home extends BaseController
     }
 
     /**
+     * Terms page
+     * @return string
+     */
+    public function termsOfService(): string
+    {
+        $locale = $this->request->getLocale();
+        $data   = [
+            'locale' => $locale,
+            'slug'   => 'terms-of-service',
+        ];
+        return view('termsOfService', $data);
+    }
+
+    /**
+     * Privacy policy page
+     * @return string
+     */
+    public function privacyPolicy(): string
+    {
+        $locale = $this->request->getLocale();
+        $data   = [
+            'locale' => $locale,
+            'slug'   => 'privacy-policy',
+        ];
+        return view('privacyPolicy', $data);
+    }
+
+    /**
      * Submit contact form via email
      * @return ResponseInterface
      */
