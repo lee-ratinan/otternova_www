@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <div class="contact-form-container">
+                    <div class="contact-form-container mb-3">
                         <h3><?= lang('Contact.form.title') ?></h3>
                         <p><?= lang('Contact.form.subtitle') ?></p>
                         <form action="<?= base_url('submit-contact-form') ?>" method="post" class="php-email-form">

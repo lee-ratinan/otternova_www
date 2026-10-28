@@ -55,11 +55,14 @@
                 <div class="col text-center">
                     <p><?= lang('Pricing.check-other-country') ?></p>
                     <?php foreach ($pricing as $keyCode => $values) : ?>
-                        <a class="btn btn<?= ($keyCode == $countryCode ? '' : '-outline') ?>-warning" href="<?= base_url($locale . '/pricing/' . $keyCode) ?>">
+                        <?php
+                        if ($keyCode == $countryCode) { continue; }
+                        ?>
+                        <a class="btn btn-link mx-5 btn-minimal" href="<?= base_url($locale . '/pricing/' . $keyCode) ?>">
                             <?php if ('XX' == $keyCode) : ?>
-                                <i class="bi bi-globe"></i>
+                                <i class="bi bi-globe me-3"></i>
                             <?php else: ?>
-                                <span class="fi fi-<?= strtolower($keyCode) ?>"></span>
+                                <span class="fi fi-<?= strtolower($keyCode) ?> me-3"></span>
                             <?php endif; ?>
                             <?= lang('Pricing.plan-country.' . $values['slug']) ?>
                         </a>

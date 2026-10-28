@@ -119,6 +119,18 @@ a:hover {
   text-decoration: none;
 }
 
+.btn-minimal {
+  padding: 0 2rem;
+  color: var(--default-color);
+  text-decoration: none;
+}
+
+.btn-minimal:hover {
+  border-bottom: 1px solid var(--default-color);
+  color: var(--default-color);
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -2524,7 +2536,7 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../img/abstract-bg-3.webp") center/cover;
+  /*background: url("../img/abstract-bg-3.webp") center/cover;*/
   opacity: 0.03;
   z-index: 1;
 }

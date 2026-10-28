@@ -16,20 +16,20 @@
             </nav>
         </div>
     </div>
-    <section class="about section light-background">
+    <section class="section light-background">
         <div class="container">
             <div class="row justify-content-center g-3">
-                <?php foreach ($supported as $languageCode) : ?>
-                    <div class="col-6 col-md-4 col-xl-3">
-                        <a class="btn btn-primary w-100 p-3" href="<?= base_url($languageCode . '/home') ?>">
+                <div class="col-12 text-center">
+                    <?php foreach ($supported as $languageCode) : ?>
+                        <a class="btn btn-link mx-5 btn-minimal" href="<?= base_url($languageCode . '/home') ?>">
                             <?php
                             $flag = substr($languageCode, -2);
-                            echo '<i class="fi fi-' . strtolower($flag) . '"></i>';
+                            echo '<i class="fi fi-' . strtolower($flag) . ' me-3"></i>';
                             ?>
                             <?= $helper[$languageCode]; ?>
                         </a>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
                 <div class="col-12 p-5 text-center">
                     <h1 id="target" data-text="We promise we will serve you in more languages soon.;今後、より多くの言語でサービスを提供できるよう努めてまいります。;我們承諾，不久後將以更多語言為您服務。;Kami berjanji akan memberikan perkhidmatan kepada anda dalam lebih banyak bahasa tidak lama lagi."></h1>
                 </div>
