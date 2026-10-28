@@ -51,13 +51,61 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
     <script>
-        function applySystemTheme(e) {
-            const isDark = e.matches;
-            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        }
-        const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        applySystemTheme(colorSchemeQuery);
-        colorSchemeQuery.addEventListener('change', applySystemTheme);
+        (function () {
+            const COOKIE_NAME = 'theme';
+            const COOKIE_DAYS = 365;
+            const root = document.documentElement;
+            const media = window.matchMedia('(prefers-color-scheme: dark)');
+            const ICONS = {
+                light: '<i class="bi bi-brightness-high"></i>',
+                dark: '<i class="bi bi-moon"></i>',
+            };
+            function getCookie(name) {
+                const match = document.cookie.split('; ').find((row) => row.startsWith(name + '='));
+                return match ? decodeURIComponent(match.split('=')[1]) : null;
+            }
+            function setCookie(name, value, days) {
+                const maxAge = days * 24 * 60 * 60;
+                document.cookie = `${name}=${encodeURIComponent(value)}; max-age=${maxAge}; path=/; SameSite=Lax`;
+            }
+            function getSavedTheme() {
+                const saved = getCookie(COOKIE_NAME);
+                return saved === 'dark' || saved === 'light' ? saved : null;
+            }
+            function applyTheme(theme) {
+                root.setAttribute('data-theme', theme);
+                const button = document.getElementById('theme-toggle');
+                if (button) {button.innerHTML = ICONS[theme];}
+            }
+            function getCurrentTheme() {
+                return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            }
+            // Called by the button: toggles the mode and stores the choice in the cookie
+            function toggleTheme() {
+                const next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+                applyTheme(next);
+                setCookie(COOKIE_NAME, next, COOKIE_DAYS);
+            }
+            function initTheme() {
+                // Cookie wins; otherwise follow the browser's preference
+                applyTheme(getSavedTheme() || (media.matches ? 'dark' : 'light'));
+                const button = document.getElementById('theme-toggle');
+                if (button) {
+                    button.addEventListener('click', toggleTheme);
+                }
+                // Follow live OS/browser changes only while the user hasn't chosen manually
+                media.addEventListener('change', (e) => {
+                    if (!getSavedTheme()) {
+                        applyTheme(e.matches ? 'dark' : 'light');
+                    }
+                });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initTheme);
+            } else {
+                initTheme();
+            }
+        })();
     </script>
 </head>
 <body class="index-page lang-<?= $locale ?>">
@@ -76,6 +124,7 @@
                     }
                 }
                 ?>
+                <a id="theme-toggle" aria-label="<?= lang('Meta.toggle-mode') ?>" href="#"></a>
             </div>
         </div>
     </div><!-- End Top Bar -->

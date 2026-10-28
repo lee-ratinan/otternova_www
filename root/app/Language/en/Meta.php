@@ -29,5 +29,6 @@ return [
         'locale'    => 'Locale Keywords'
     ],
     'useful-links'            => 'Useful Links',
-    'site-footer-description' => 'Next-gen business solutions that you can trust.'
+    'site-footer-description' => 'Next-gen business solutions that you can trust.',
+    'toggle-mode'             => 'Toggle dark/light mode',
 ];

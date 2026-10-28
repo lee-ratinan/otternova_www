@@ -29,5 +29,6 @@ return [
         'locale'    => 'Locale Keywords'
     ],
     'useful-links'            => 'ลิงก์สำคัญ',
-    'site-footer-description' => 'โซลูชั่นสำหรับธุรกิจเน็กต์เจ็นที่คุณไว้ใจได้'
+    'site-footer-description' => 'โซลูชั่นสำหรับธุรกิจเน็กต์เจ็นที่คุณไว้ใจได้',
+    'toggle-mode'             => 'สลับโหมดสว่าง/มืด',
 ];
