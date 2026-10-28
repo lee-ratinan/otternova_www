@@ -22,6 +22,8 @@
     <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor/flag-icon/css/flag-icons.min.css') ?>" rel="stylesheet">
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
     <!-- =======================================================
@@ -73,7 +75,18 @@
                     <li><a href="<?= base_url($locale . '/pricing') ?>" <?= ('pricing' == $slug ? 'class="active"' : '') ?>><?= lang('Meta.page-title.pricing') ?></a></li>
                     <li><a href="<?= base_url($locale . '/about-us') ?>" <?= ('about-us' == $slug ? 'class="active"' : '') ?>><?= lang('Meta.page-title.about-us') ?></a></li>
                     <li><a href="<?= base_url($locale . '/contact') ?>" <?= ('contact' == $slug ? 'class="active"' : '') ?>><?= lang('Meta.page-title.contact') ?></a></li>
-                    <li><a href="<?= base_url($locale . '/locale') ?>" <?= ('locale' == $slug ? 'class="active"' : '') ?>><?= lang('Meta.change-language') ?></a></li>
+                    <li class="dropdown"><a href="<?= base_url($locale . '/locale') ?>"><span><?= lang('Meta.change-language') ?></span> <i class="bi bi-translate toggle-dropdown"></i></a>
+                        <ul>
+                            <?php
+                            $languages = listSupportedLanguages();
+                            foreach ($languages as $key => $value) {
+                                $flag = strtolower(substr($key, -2));
+                                echo '<li><a href="' . base_url($key . '/home') . '">' . $value . ' <span class="fi fi-' . $flag . '"></i></a></li>';
+                            }
+                            ?>
+                            <li><a href="<?= base_url($locale . '/locale') ?>"><?= lang('Meta.page-title.locale') ?></a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

@@ -18,10 +18,14 @@
     </div>
     <section class="about section light-background">
         <div class="container">
-            <div class="row g-3">
+            <div class="row justify-content-center g-3">
                 <?php foreach ($supported as $languageCode) : ?>
                     <div class="col-6 col-md-4 col-xl-3">
                         <a class="btn btn-primary w-100 p-3" href="<?= base_url($languageCode . '/home') ?>">
+                            <?php
+                            $flag = substr($languageCode, -2);
+                            echo '<i class="fi fi-' . strtolower($flag) . '"></i>';
+                            ?>
                             <?= $helper[$languageCode]; ?>
                         </a>
                     </div>
