@@ -12,7 +12,11 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <?php if ('en-US' == $locale): ?>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <?php elseif ('th' == $locale): ?>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <?php endif; ?>
     <!-- CSS -->
     <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
@@ -46,12 +50,12 @@
         }
     </style>
 </head>
-<body class="index-page">
+<body class="index-page lang-<?= $locale ?>">
     <div class="container">
         <section class="section text-center align-items-center justify-content-center mt-5 p-5">
             <img src="<?= base_url('assets/img/website/coming-soon.webp')?>" alt="Coming Soon" class="img-fluid under-construction-img" />
-            <h1 class="pt-5">Coming Soon</h1>
-            <h2>Our otters are working hard to bring you the great product!</h2>
+            <h1 class="pt-5"><?= lang('Meta.coming-soon.title') ?></h1>
+            <h2><?= lang('Meta.coming-soon.paragraph') ?></h2>
         </section>
     </div>
 </body>

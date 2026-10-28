@@ -39,5 +39,9 @@ return [
         'other-links' => 'Other links',
         'client'      => 'Client System',
         'marketplace' => 'Marketplace',
+    ],
+    'coming-soon'          => [
+        'title'     => 'Coming Soon',
+        'paragraph' => 'Our otters are working hard to bring you the great product!'
     ]
 ];

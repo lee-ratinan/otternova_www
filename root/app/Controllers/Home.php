@@ -66,7 +66,11 @@ class Home extends BaseController
      */
     public function underConstruction(): string
     {
-        return view('underConstruction');
+        $locale = $this->request->getLocale();
+        $data   = [
+            'locale' => $locale
+        ];
+        return view('underConstruction', $data);
     }
 
     /**
