@@ -225,6 +225,9 @@ class Home extends BaseController
                 'jate'  => [
                     'image' => 'leadership-jate.webp'
                 ],
+                'tat'   => [
+                    'image' => 'leadership-tat.webp'
+                ]
             ]
         ];
         return view('aboutUs', $data);

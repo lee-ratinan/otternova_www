@@ -52,6 +52,11 @@ return [
                 'role' => 'Lead Developer &amp; Tester',
                 'bio'  => 'Donec iaculis accumsan arcu. In eget ultrices eros, ac condimentum libero. Nam nisl lacus, facilisis eget luctus ut, efficitur vitae elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla luctus vehicula massa. Suspendisse luctus viverra pellentesque. Phasellus fermentum pellentesque ex, vel ornare libero euismod nec. Suspendisse id diam nec eros ultricies ultricies non ac ligula. Curabitur ante erat, vestibulum vel dapibus a, porta eu tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin at cursus ligula, ut aliquam tellus. Praesent vestibulum, leo a egestas gravida, est sapien vulputate sem, maximus scelerisque leo metus gravida libero. Phasellus et sagittis ligula, a feugiat sem. Aliquam eget dui tristique, varius libero id, auctor lorem. Praesent pharetra ipsum ante, non interdum diam semper quis. Duis consequat fermentum enim.',
             ],
+            'tat' => [
+                'name' => 'Tat',
+                'role' => 'Quality Assurance',
+                'bio'  => 'Donec iaculis accumsan arcu. In eget ultrices eros, ac condimentum libero. Nam nisl lacus, facilisis eget luctus ut, efficitur vitae elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla luctus vehicula massa. Suspendisse luctus viverra pellentesque. Phasellus fermentum pellentesque ex, vel ornare libero euismod nec. Suspendisse id diam nec eros ultricies ultricies non ac ligula. Curabitur ante erat, vestibulum vel dapibus a, porta eu tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin at cursus ligula, ut aliquam tellus. Praesent vestibulum, leo a egestas gravida, est sapien vulputate sem, maximus scelerisque leo metus gravida libero. Phasellus et sagittis ligula, a feugiat sem. Aliquam eget dui tristique, varius libero id, auctor lorem. Praesent pharetra ipsum ante, non interdum diam semper quis. Duis consequat fermentum enim.',
+            ]
         ],
     ],
 ];
