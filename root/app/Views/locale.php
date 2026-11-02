@@ -21,7 +21,7 @@
             <div class="row justify-content-center g-3">
                 <div class="col-12 text-center">
                     <?php foreach ($supported as $languageCode) : ?>
-                        <a class="btn btn-link mx-5 btn-minimal" href="<?= base_url($languageCode . '/home') ?>">
+                        <a class="btn btn-link mx-5 btn-minimal rounded-0 mb-3" href="<?= base_url($languageCode . '/home') ?>">
                             <?php
                             $flag = substr($languageCode, -2);
                             echo '<i class="fi fi-' . strtolower($flag) . ' me-3"></i>';

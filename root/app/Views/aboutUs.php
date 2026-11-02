@@ -24,8 +24,10 @@
                         <div class="cta-content p-5">
                             <span class="badge-custom"><?= lang('AboutUs.call-to-action.badge') ?></span>
                             <h2 class="mt-4 mb-4"><?= lang('AboutUs.call-to-action.title') ?></h2>
-                            <p class="mb-4"><?= lang('AboutUs.call-to-action.description') ?></p>
-                            <div class="row benefits-row mb-5">
+                            <?php foreach (lang('AboutUs.call-to-action.description') as $line) : ?>
+                                <p><?= $line ?></p>
+                            <?php endforeach; ?>
+                            <div class="row benefits-row mt-4 mb-5">
                                 <div class="col-md-6">
                                     <div class="benefit-item">
                                         <div class="icon-box">
@@ -84,7 +86,7 @@
         </div>
         <div class="container">
             <div class="team-slider swiper init-swiper">
-                <script type="application/json" class="swiper-config">{"loop":true,"speed":800,"autoplay":{"delay":5000},"slidesPerView":1,"spaceBetween":30,"pagination":{"el":".swiper-pagination","type":"bullets","clickable":true},"navigation":{"nextEl":".swiper-button-next","prevEl":".swiper-button-prev"},"breakpoints":{"576":{"slidesPerView":2},"992":{"slidesPerView":3},"1200":{"slidesPerView":4}}}</script>
+                <script type="application/json" class="swiper-config">{"loop":true,"loopAdditionalSlides":0,"speed":800,"autoplay":{"delay":5000},"slidesPerView":1,"spaceBetween":30,"pagination":{"el":".swiper-pagination","type":"bullets","clickable":true},"navigation":{"nextEl":".swiper-button-next","prevEl":".swiper-button-prev"},"breakpoints":{"576":{"slidesPerView":2},"992":{"slidesPerView":3},"1200":{"slidesPerView":4}}}</script>
                 <div class="swiper-wrapper">
                     <?php foreach ($teamMembers as $slug => $member): ?>
                         <?php $socials = $member['socials'] ?? $defaultSocials; ?>
@@ -104,8 +106,14 @@
                                 </div>
                                 <div class="team-content">
                                     <h3><?= lang('AboutUs.team.members.' . $slug . '.name') ?></h3>
-                                    <span><?= lang('AboutUs.team.members.' . $slug . '.role') ?></span>
-                                    <p><?= lang('AboutUs.team.members.' . $slug . '.bio') ?></p>
+                                    <span>
+                                        <?php foreach (lang('AboutUs.team.members.' . $slug . '.role') as $role): ?>
+                                            <?= $role ?><br/>
+                                        <?php endforeach; ?>
+                                    </span>
+                                    <?php foreach (lang('AboutUs.team.members.' . $slug . '.bio') as $bio): ?>
+                                        <p class="mb-3"><?= $bio ?></p>
+                                    <?php endforeach; ?>
                                 </div>
                             </div><!-- End Team Card -->
                         </div>

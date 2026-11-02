@@ -33,7 +33,7 @@ return [
         'privacy-policy'   => 'privacy policy, data protection, personal data, data privacy, OtterNova privacy',
     ],
     'useful-links'            => 'Useful Links',
-    'site-footer-description' => 'Next-gen business solutions that you can trust.',
+    'site-footer-description' => '<b>Smarter business. Simpler growth.</b><br/>Next-gen business solutions that you can trust.',
     'toggle-mode'             => 'Toggle dark/light mode',
     'links'                   => [
         'other-links' => 'Other links',

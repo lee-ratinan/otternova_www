@@ -7,7 +7,12 @@ return [
     'call-to-action' => [
         'badge'       => 'สร้างมาเพื่อธุรกิจขนาดเล็ก',
         'title'       => 'ธุรกิจของคุณสมควรได้เริ่มต้นอย่างชาญฉลาด',
-        'description' => 'เราเข้าใจความท้าทายที่ธุรกิจขนาดเล็กกำลังเผชิญ การอยู่บนโลกออนไลน์กลายเป็นเรื่องจำเป็นต่อการอยู่รอด และ AI ก็ทำให้ทุกอย่างเร็วขึ้นอย่างมาก แต่การเริ่มต้นต้องมีผู้ชี้แนะ ซึ่งมักมาพร้อมค่าใช้จ่ายสูง OtterNova พร้อมเปลี่ยนเรื่องนี้ ด้วยเส้นทางที่คุ้มค่าและมีคนนำทางทุกขั้นตอน ช่วยให้ธุรกิจของคุณขึ้นออนไลน์ด้วย AI ได้อย่างมั่นใจ',
+        'description' => [
+            'ธุรกิจขนาดเล็กก็สมควรได้รับโอกาสที่ยิ่งใหญ่',
+            'เราเข้าใจดีว่าการดำเนินธุรกิจขนาดเล็กต้องใช้ความพยายามมากแค่ไหน เพราะเราเองก็อยู่ในจุดเดียวกับคุณ ไม่ว่าจะเป็นการให้บริการลูกค้าหน้าเคาน์เตอร์ หรือการรับมือกับความท้าทายต่าง ๆ ที่เกิดขึ้นเบื้องหลัง เราได้สัมผัสและเข้าใจด้วยตัวเองว่าการประคับประคองให้ธุรกิจดำเนินต่อไปนั้นต้องทุ่มเทมากเพียงใด',
+            'ในปัจจุบัน การมีตัวตนบนโลกออนไลน์ไม่ใช่ทางเลือกอีกต่อไป และ AI ก็กำลังเปลี่ยนแปลงวิธีการดำเนินธุรกิจอย่างรวดเร็ว แต่การเริ่มต้นไม่ควรเป็นเรื่องยุ่งยาก ซับซ้อน หรือมีค่าใช้จ่ายสูงเกินไป',
+            'ที่ OtterNova เราเชื่อว่าธุรกิจขนาดเล็กทุกแห่งควรมีโอกาสเติบโตในโลกดิจิทัล เราจึงมุ่งมั่นที่จะทำให้การนำธุรกิจเข้าสู่โลกออนไลน์เป็นเรื่องง่ายขึ้น ประหยัดค่าใช้จ่ายมากขึ้น และเข้าถึงได้มากขึ้น พร้อมคำแนะนำและเครื่องมือที่ขับเคลื่อนด้วย AI ซึ่งจะช่วยสนับสนุนคุณในทุกขั้นตอนของการเดินทาง',
+        ],
         'benefits'    => [
             'quick-setup'   => [
                 'title'       => 'ตั้งค่าได้รวดเร็ว',
@@ -39,23 +44,30 @@ return [
         'members'        => [
             'eikin' => [
                 'name' => 'เอคิน',
-                'role' => 'ประธานเจ้าหน้าที่บริหาร (CEO)<br/>ประธานเจ้าหน้าที่ฝ่ายเทคโนโลยี (CTO)',
-                'bio'  => 'Eikin เป็นผู้ก่อตั้ง ประธานเจ้าหน้าที่บริหาร (CEO) และประธานเจ้าหน้าที่ฝ่ายเทคโนโลยี (CTO) ของ OtterNova<br/><br/>ก่อนก่อตั้ง OtterNova ในช่วงปลายปี ค.ศ. 2025 Eikin เคยทำงานกับบริษัทฟินเทคระดับภูมิภาคและบริษัทอีคอมเมิร์ซชั้นนำ โดยสร้างและนำทีมวิศวกรที่สร้างผลลัพธ์ระดับสูง ซึ่งมีส่วนช่วยพัฒนาภาคการเงินทั่วเอเชียใต้และเอเชียตะวันออกเฉียงใต้ ในปี ค.ศ. 2023 เขานำโครงการ Financial AI ที่ได้รับรางวัลจากงาน Singapore FinTech Festival<br/><br/>Eikin สำเร็จการศึกษาระดับปริญญาโทสาขา Information Systems จาก Nanyang Technological University และปริญญาตรีสาขาวิทยาการคอมพิวเตอร์ (เกียรตินิยมอันดับ 1) จากมหาวิทยาลัยธรรมศาสตร์ นอกจากนี้ยังได้รับการรับรองเป็น Certified ScrumMaster (CSM), Professional Scrum Master II (PSM II) และ Professional Scrum Product Owner II (PSPO II)',
+                'role' => [
+                    'ประธานเจ้าหน้าที่บริหาร (CEO)',
+                    'ประธานเจ้าหน้าที่ฝ่ายเทคโนโลยี (CTO)'
+                ],
+                'bio'  => [
+                    'Eikin เป็นผู้ก่อตั้ง ประธานเจ้าหน้าที่บริหาร (CEO) และประธานเจ้าหน้าที่ฝ่ายเทคโนโลยี (CTO) ของ OtterNova',
+                    'ก่อนก่อตั้ง OtterNova ในช่วงปลายปี ค.ศ. 2025 Eikin เคยทำงานกับบริษัทฟินเทคระดับภูมิภาคและบริษัทอีคอมเมิร์ซชั้นนำ โดยสร้างและนำทีมวิศวกรที่สร้างผลลัพธ์ระดับสูง ซึ่งมีส่วนช่วยพัฒนาภาคการเงินทั่วเอเชียใต้และเอเชียตะวันออกเฉียงใต้ ในปี ค.ศ. 2023 เขานำโครงการ Financial AI ที่ได้รับรางวัลจากงาน Singapore FinTech Festival',
+                    'Eikin สำเร็จการศึกษาระดับปริญญาโทสาขา Information Systems จาก Nanyang Technological University และปริญญาตรีสาขาวิทยาการคอมพิวเตอร์ (เกียรตินิยมอันดับ 1) จากมหาวิทยาลัยธรรมศาสตร์ นอกจากนี้ยังได้รับการรับรองเป็น Certified ScrumMaster (CSM), Professional Scrum Master II (PSM II) และ Professional Scrum Product Owner II (PSPO II)'
+                ],
             ],
             'jate'  => [
                 'name' => 'เจต',
-                'role' => 'ประธานเจ้าหน้าที่ฝ่ายปฏิบัติการ (COO)',
-                'bio'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar lobortis tellus, non consequat turpis tempus id. Vestibulum urna nunc, ultricies ac risus eget, semper mattis tellus. Fusce diam lorem, tempor in ligula eget, tempus volutpat lorem. Sed vel lobortis ante. Sed blandit condimentum nibh eget imperdiet. Proin vel aliquet tortor, commodo ultrices metus. Sed tempus dui vitae leo euismod vehicula. Etiam nisl nisi, placerat ut varius sit amet, cursus non nisi. Nulla gravida erat eget eros ullamcorper, sit amet iaculis turpis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat ex in viverra molestie. Donec et nunc ac leo posuere pellentesque ut a arcu. Quisque vestibulum arcu felis, id rutrum lectus ornare nec.',
+                'role' => ['ประธานเจ้าหน้าที่ฝ่ายปฏิบัติการ (COO)'],
+                'bio'  => ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar lobortis tellus, non consequat turpis tempus id. Vestibulum urna nunc, ultricies ac risus eget, semper mattis tellus. Fusce diam lorem, tempor in ligula eget, tempus volutpat lorem. Sed vel lobortis ante. Sed blandit condimentum nibh eget imperdiet. Proin vel aliquet tortor, commodo ultrices metus. Sed tempus dui vitae leo euismod vehicula. Etiam nisl nisi, placerat ut varius sit amet, cursus non nisi. Nulla gravida erat eget eros ullamcorper, sit amet iaculis turpis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consequat ex in viverra molestie. Donec et nunc ac leo posuere pellentesque ut a arcu. Quisque vestibulum arcu felis, id rutrum lectus ornare nec.'],
             ],
             'fauzi' => [
                 'name' => 'เฟาซี',
-                'role' => 'นักพัฒนาหลักและผู้ทดสอบระบบ',
-                'bio'  => 'Donec iaculis accumsan arcu. In eget ultrices eros, ac condimentum libero. Nam nisl lacus, facilisis eget luctus ut, efficitur vitae elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla luctus vehicula massa. Suspendisse luctus viverra pellentesque. Phasellus fermentum pellentesque ex, vel ornare libero euismod nec. Suspendisse id diam nec eros ultricies ultricies non ac ligula. Curabitur ante erat, vestibulum vel dapibus a, porta eu tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin at cursus ligula, ut aliquam tellus. Praesent vestibulum, leo a egestas gravida, est sapien vulputate sem, maximus scelerisque leo metus gravida libero. Phasellus et sagittis ligula, a feugiat sem. Aliquam eget dui tristique, varius libero id, auctor lorem. Praesent pharetra ipsum ante, non interdum diam semper quis. Duis consequat fermentum enim.',
+                'role' => ['นักพัฒนาหลักและผู้ทดสอบระบบ'],
+                'bio'  => ['Donec iaculis accumsan arcu. In eget ultrices eros, ac condimentum libero. Nam nisl lacus, facilisis eget luctus ut, efficitur vitae elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla luctus vehicula massa. Suspendisse luctus viverra pellentesque. Phasellus fermentum pellentesque ex, vel ornare libero euismod nec. Suspendisse id diam nec eros ultricies ultricies non ac ligula. Curabitur ante erat, vestibulum vel dapibus a, porta eu tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin at cursus ligula, ut aliquam tellus. Praesent vestibulum, leo a egestas gravida, est sapien vulputate sem, maximus scelerisque leo metus gravida libero. Phasellus et sagittis ligula, a feugiat sem. Aliquam eget dui tristique, varius libero id, auctor lorem. Praesent pharetra ipsum ante, non interdum diam semper quis. Duis consequat fermentum enim.'],
             ],
             'tat' => [
                 'name' => 'ธัต',
-                'role' => 'ควบคุมคุณภาพ',
-                'bio'  => 'Donec iaculis accumsan arcu. In eget ultrices eros, ac condimentum libero. Nam nisl lacus, facilisis eget luctus ut, efficitur vitae elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla luctus vehicula massa. Suspendisse luctus viverra pellentesque. Phasellus fermentum pellentesque ex, vel ornare libero euismod nec. Suspendisse id diam nec eros ultricies ultricies non ac ligula. Curabitur ante erat, vestibulum vel dapibus a, porta eu tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin at cursus ligula, ut aliquam tellus. Praesent vestibulum, leo a egestas gravida, est sapien vulputate sem, maximus scelerisque leo metus gravida libero. Phasellus et sagittis ligula, a feugiat sem. Aliquam eget dui tristique, varius libero id, auctor lorem. Praesent pharetra ipsum ante, non interdum diam semper quis. Duis consequat fermentum enim.',
+                'role' => ['ควบคุมคุณภาพ'],
+                'bio'  => ['Donec iaculis accumsan arcu. In eget ultrices eros, ac condimentum libero. Nam nisl lacus, facilisis eget luctus ut, efficitur vitae elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla luctus vehicula massa. Suspendisse luctus viverra pellentesque. Phasellus fermentum pellentesque ex, vel ornare libero euismod nec. Suspendisse id diam nec eros ultricies ultricies non ac ligula. Curabitur ante erat, vestibulum vel dapibus a, porta eu tellus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin at cursus ligula, ut aliquam tellus. Praesent vestibulum, leo a egestas gravida, est sapien vulputate sem, maximus scelerisque leo metus gravida libero. Phasellus et sagittis ligula, a feugiat sem. Aliquam eget dui tristique, varius libero id, auctor lorem. Praesent pharetra ipsum ante, non interdum diam semper quis. Duis consequat fermentum enim.'],
             ]
         ],
     ],

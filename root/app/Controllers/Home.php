@@ -212,9 +212,6 @@ class Home extends BaseController
             'slug'           => 'about-us',
             'defaultSocials' => [],
             'teamMembers'    => [
-                'fauzi' => [
-                    'image' => 'leadership-fauzi.webp'
-                ],
                 'eikin' => [
                     'image'   => 'leadership-eikin.webp',
                     'socials' => [
@@ -224,6 +221,9 @@ class Home extends BaseController
                 ],
                 'jate'  => [
                     'image' => 'leadership-jate.webp'
+                ],
+                'fauzi' => [
+                    'image' => 'leadership-fauzi.webp'
                 ],
                 'tat'   => [
                     'image' => 'leadership-tat.webp'
