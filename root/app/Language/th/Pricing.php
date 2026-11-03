@@ -11,6 +11,7 @@ return [
     'forever'             => 'ตลอดไป', // Free forever
     'buy-now'             => 'เริ่มต้นใช้งาน',
     'saving'              => '<small>เริ่มที่</small> {0}{1} <small>(-{2}%)</small>',
+    'contact-sales'       => 'ติดต่อฝ่ายขาย',
     'check-other-country' => 'ดูแพ็กเกจของประเทศอื่น:',
     'plan-country'        => [
         'global'   => 'ทั่วโลก',
@@ -30,8 +31,8 @@ return [
                 'feature-1' => '1 บัญชีผู้ใช้',
                 'feature-2' => '1 เว็บเพจ',
                 'feature-3' => '1 บริการ',
-                'feature-4' => '1 สินค้า',
-                'feature-5' => 'การจองแบบวอล์กอินไม่จำกัดจำนวน',
+                'feature-4' => 'การจองแบบวอล์กอินไม่จำกัดจำนวน',
+                'feature-5' => '<i class="bi bi-ban text-danger"></i> ไม่มีเครดิตใช้ AI',
             ],
         ],
         'boost'    => [
@@ -45,6 +46,7 @@ return [
                 'feature-5' => 'ซัพพอร์ตทางอีเมล',
                 'feature-6' => 'การจองแบบวอล์กอินไม่จำกัดจำนวน',
                 'feature-7' => 'ขายสินค้าควบคู่ไปกับบริการของคุณ',
+                'feature-8' => '<i class="bi bi-cpu bi-ai-gradient"></i> ใช้ AI ได้ 2 ครั้งต่องาน',
             ],
         ],
         'velocity' => [
@@ -58,6 +60,7 @@ return [
                 'feature-5' => 'ซัพพอร์ตทางอีเมล',
                 'feature-6' => 'การจองแบบวอล์กอินและแบบเข้าร่วมรอบไม่จำกัดจำนวน',
                 'feature-7' => 'ขายสินค้าควบคู่ไปกับบริการของคุณ',
+                'feature-8' => '<i class="bi bi-cpu bi-ai-gradient"></i> ใช้ AI ได้ 2 ครั้งต่องาน',
             ],
         ],
         'quantum'  => [
@@ -71,6 +74,15 @@ return [
                 'feature-5' => 'ซัพพอร์ตทางอีเมล',
                 'feature-6' => 'การจองแบบวอล์กอินและแบบเข้าร่วมรอบไม่จำกัดจำนวน',
                 'feature-7' => 'ขายสินค้าควบคู่ไปกับบริการของคุณ',
+                'feature-8' => '<i class="bi bi-cpu bi-ai-gradient"></i> ใช้ AI ได้ 3 ครั้งต่องาน',
+            ],
+        ],
+        'nova'  => [
+            'name'        => 'Nova',
+            'description' => 'ธุรกิจใหญ่แล้ว ต้องการระบบที่พร้อมเสมอ',
+            'features'    => [
+                'feature-1' => 'กำหนดลิมิตร่วมกัน',
+                'feature-2' => '<i class="bi bi-cpu bi-ai-gradient"></i> ใช้ AI ได้หากต้องการ',
             ],
         ],
     ],

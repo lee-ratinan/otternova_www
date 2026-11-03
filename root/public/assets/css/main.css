@@ -5548,9 +5548,17 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.bi-ai-gradient {
+  background: linear-gradient(
+      135deg,
+      #ff8c00 0%,
+      #ff8c00 20%,
+      #28a745 50%,
+      #8b5cf6 80%,
+      #8b5cf6 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

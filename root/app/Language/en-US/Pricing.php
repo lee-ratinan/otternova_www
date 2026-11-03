@@ -11,6 +11,7 @@ return [
     'forever'             => 'Forever', // Free forever
     'buy-now'             => 'Get Started',
     'saving'              => '<small>From</small> {0}{1} <small>(-{2}%)</small>',
+    'contact-sales'       => 'Contact Sales',
     'check-other-country' => 'See plans for other countries:',
     'plan-country'        => [
         'global'   => 'Global',
@@ -30,8 +31,8 @@ return [
                 'feature-1' => '1 user account',
                 'feature-2' => '1 web page',
                 'feature-3' => '1 service',
-                'feature-4' => '1 product',
-                'feature-5' => 'Unlimited walk-in bookings',
+                'feature-4' => 'Unlimited walk-in bookings',
+                'feature-5' => '<i class="bi bi-ban text-danger"></i> No AI credits',
             ],
         ],
         'boost'    => [
@@ -45,6 +46,7 @@ return [
                 'feature-5' => 'Email support',
                 'feature-6' => 'Unlimited walk-in bookings',
                 'feature-7' => 'Sell products alongside your services',
+                'feature-8' => '<i class="bi bi-cpu bi-ai-gradient"></i> 2 AI attempts per entity',
             ],
         ],
         'velocity' => [
@@ -58,6 +60,7 @@ return [
                 'feature-5' => 'Email support',
                 'feature-6' => 'Unlimited walk-in and session-based bookings',
                 'feature-7' => 'Sell products alongside your services',
+                'feature-8' => '<i class="bi bi-cpu bi-ai-gradient"></i> 2 AI attempts per entity',
             ],
         ],
         'quantum'  => [
@@ -71,6 +74,15 @@ return [
                 'feature-5' => 'Email support',
                 'feature-6' => 'Unlimited walk-in and session-based bookings',
                 'feature-7' => 'Sell products alongside your services',
+                'feature-8' => '<i class="bi bi-cpu bi-ai-gradient"></i> 3 AI attempts per entity',
+            ],
+        ],
+        'nova'  => [
+            'name'        => 'Nova',
+            'description' => 'My business is big, I need it big now!',
+            'features'    => [
+                'feature-1' => 'Set the limits together',
+                'feature-2' => '<i class="bi bi-cpu bi-ai-gradient"></i> Use AI if you want',
             ],
         ],
     ],

@@ -25,7 +25,7 @@
                                 <i class="bi bi-<?= esc($plan['icon'], 'attr') ?>"></i>
                             </div>
                             <h3><?= lang('Pricing.plans.' . $planSlug . '.name') ?></h3>
-                            <?php if ('free' != $planSlug) : ?>
+                            <?php if (in_array($planSlug, ['boost', 'velocity', 'quantum'])): ?>
                             <div class="price">
                                 <span class="currency"><?= $pricing[$countryCode]['currencyCode'] ?></span><?= number_format($plan['price'][0]) ?><span class="period"><?= lang('Pricing.per-month') ?></span>
                             </div>
@@ -35,6 +35,14 @@
                             ?>
                             <h4><?= lang('Pricing.or') ?> <?= $pricing[$countryCode]['currencyCode'] ?><?= number_format($plan['price'][1]) ?><?= lang('Pricing.per-year') ?></h4>
                             <p class="description"><?= lang('Pricing.saving', [$pricing[$countryCode]['currencyCode'], number_format($fullYearPricing), number_format($saving, 2)]) ?></p>
+                            <?php elseif ('nova' == $planSlug): ?>
+                                <div class="price">
+                                    <span class="currency">
+                                        <?= $pricing[$countryCode]['currencyCode'] ?>
+                                    </span>
+                                    ?
+                                    <span class="period"><?= lang('Pricing.contact-sales') ?></span>
+                                </div>
                             <?php else: ?>
                                 <div class="price">
                                     <span class="currency"><?= $pricing[$countryCode]['currencyCode'] ?></span>0<span class="period"><?= lang('Pricing.forever') ?></span>
@@ -46,7 +54,11 @@
                                     <li><i class="bi bi-check2"></i> <?= $feature ?></li>
                                 <?php endforeach; ?>
                             </ul>
-                            <a href="<?= getenv('LINK_CLIENT') ?>" class="btn-pricing"><?= lang('Pricing.buy-now') ?></a>
+                            <?php if ('nova' == $planSlug): ?>
+                                <a class="btn-pricing" href="<?= base_url($locale . '/contact') ?>"><?= lang('Contact.form.title') ?></a>
+                            <?php else: ?>
+                                <a href="<?= getenv('LINK_CLIENT') ?>" class="btn-pricing"><?= lang('Pricing.buy-now') ?></a>
+                            <?php endif; ?>
                         </div>
                     </div><!-- End <?= esc($planSlug) ?> plan -->
                 <?php endforeach; ?>
@@ -58,7 +70,7 @@
                         <?php
                         if ($keyCode == $countryCode) { continue; }
                         ?>
-                        <a class="btn btn-link mx-5 btn-minimal" href="<?= base_url($locale . '/pricing/' . $keyCode) ?>">
+                        <a class="btn btn-link rounded-0 mx-5 btn-minimal" href="<?= base_url($locale . '/pricing/' . $keyCode) ?>">
                             <?php if ('XX' == $keyCode) : ?>
                                 <i class="bi bi-globe me-3"></i>
                             <?php else: ?>

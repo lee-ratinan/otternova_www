@@ -109,7 +109,8 @@ class Home extends BaseController
                 'free'         => [0, 0],
                 'boost'        => [9, 90],
                 'velocity'     => [19, 190],
-                'quantum'      => [39, 390]
+                'quantum'      => [39, 390],
+                'nova'         => [-1, -1],
             ],
             'TH' => [
                 'slug'         => 'thailand',
@@ -117,7 +118,8 @@ class Home extends BaseController
                 'free'         => [0, 0],
                 'boost'        => [299, 2990],
                 'velocity'     => [599, 5990],
-                'quantum'      => [1290, 12900]
+                'quantum'      => [1290, 12900],
+                'nova'         => [-1, -1],
             ]
         ];
         /**
@@ -157,6 +159,11 @@ class Home extends BaseController
             'free'     => [
                 'icon'        => 'piggy-bank',
                 'price'       => $pricing[$countryCode]['free'],
+                'recommended' => false
+            ],
+            'nova' => [
+                'icon'        => 'fire',
+                'price'       => $pricing[$countryCode]['nova'],
                 'recommended' => false
             ],
         ];
