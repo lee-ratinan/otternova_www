@@ -79,7 +79,7 @@
             </div>
         </div>
     </section>
-    <section id="team" class="team section">
+    <section id="team" class="team section d-none">
         <div class="container section-title">
             <h2><?= lang('AboutUs.team.title') ?></h2>
             <p><?= lang('AboutUs.team.description') ?></p>
