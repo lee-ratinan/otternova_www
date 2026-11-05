@@ -112,16 +112,16 @@ class Home extends BaseController
                 'boost'        => [9, 90],
                 'velocity'     => [19, 190],
                 'quantum'      => [39, 390],
-                'nova'         => [-1, -1],
+//                'nova'         => [-1, -1],
             ],
             'TH' => [
                 'slug'         => 'thailand',
                 'currencyCode' => '฿',
                 'free'         => [0, 0],
-                'boost'        => [299, 2990],
-                'velocity'     => [599, 5990],
-                'quantum'      => [1290, 12900],
-                'nova'         => [-1, -1],
+                'boost'        => [319, 2990],
+                'velocity'     => [649, 5990],
+                'quantum'      => [1299, 12900],
+//                'nova'         => [-1, -1],
             ]
         ];
         /**
@@ -163,11 +163,11 @@ class Home extends BaseController
                 'price'       => $pricing[$countryCode]['free'],
                 'recommended' => false
             ],
-            'nova' => [
-                'icon'        => 'fire',
-                'price'       => $pricing[$countryCode]['nova'],
-                'recommended' => false
-            ],
+//            'nova' => [
+//                'icon'        => 'fire',
+//                'price'       => $pricing[$countryCode]['nova'],
+//                'recommended' => false
+//            ],
         ];
         $data    = [
             'locale'      => $locale,

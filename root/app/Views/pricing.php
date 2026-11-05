@@ -62,6 +62,9 @@
                         </div>
                     </div><!-- End <?= esc($planSlug) ?> plan -->
                 <?php endforeach; ?>
+                <div class="col-12">
+                    <p class="text-center">* <?= lang('Pricing.tax-info') ?></p>
+                </div>
             </div>
             <div class="row mt-5 g-3 justify-content-center d-none">
                 <div class="col text-center">

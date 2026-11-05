@@ -12,6 +12,7 @@ return [
     'buy-now'             => 'Get Started',
     'saving'              => '<small>From</small> {0}{1} <small>(-{2}%)</small>',
     'contact-sales'       => 'Contact Sales',
+    'tax-info'            => 'No tax is applicable. OtterNova is not a VAT-registered entity.',
     'check-other-country' => 'See plans for other countries:',
     'plan-country'        => [
         'global'   => 'Global',
