@@ -96,14 +96,16 @@ class Home extends BaseController
     {
         $locale = $this->request->getLocale();
         $uri    = 'pricing/' . $countryCode;
-        if (empty($countryCode)) {
-            $countryCode = 'XX';
-            if ('th' == $locale) {
-                $countryCode = 'TH';
-            }
-        }
+        // Only allow Thailand pricing for now
+        $countryCode = 'TH';
+//        if (empty($countryCode)) {
+//            $countryCode = 'ZZ';
+//            if ('th' == $locale) {
+//                $countryCode = 'TH';
+//            }
+//        }
         $pricing = [
-            'XX' => [
+            'ZZ' => [
                 'slug'         => 'global',
                 'currencyCode' => '<small>US</small>$',
                 'free'         => [0, 0],

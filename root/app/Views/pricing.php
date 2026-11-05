@@ -63,7 +63,7 @@
                     </div><!-- End <?= esc($planSlug) ?> plan -->
                 <?php endforeach; ?>
             </div>
-            <div class="row mt-5 g-3 justify-content-center">
+            <div class="row mt-5 g-3 justify-content-center d-none">
                 <div class="col text-center">
                     <p><?= lang('Pricing.check-other-country') ?></p>
                     <?php foreach ($pricing as $keyCode => $values) : ?>
@@ -71,7 +71,7 @@
                         if ($keyCode == $countryCode) { continue; }
                         ?>
                         <a class="btn btn-link rounded-0 mx-5 btn-minimal" href="<?= base_url($locale . '/pricing/' . $keyCode) ?>">
-                            <?php if ('XX' == $keyCode) : ?>
+                            <?php if ('ZZ' == $keyCode) : ?>
                                 <i class="bi bi-globe me-3"></i>
                             <?php else: ?>
                                 <span class="fi fi-<?= strtolower($keyCode) ?> me-3"></span>
