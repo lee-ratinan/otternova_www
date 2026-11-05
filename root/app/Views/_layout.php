@@ -201,8 +201,11 @@
                 <h4><?= lang('Meta.page-title.contact') ?></h4>
                 <p><i class="bi bi-envelope"></i> <span><a href="mailto:<?= getenv('OTTER_EMAIL') ?>"><?= getenv('OTTER_EMAIL') ?></a></span></p>
                 <hr/>
-                <p>OtterNova | ทะเบียนพาณิชย์เลขที่ XXXXXXXXXXXXX</p>
-                <div>[DBD logo area]</div>
+                <p>ทะเบียนพาณิชย์เลขที่ XXXXXXXXXXXXX</p>
+                <div>
+                    <h6 style="color:#440066;"><em class="display-6"><b>DBD</b></em> registered</h6>
+                    <p>!!!to be REPLACED by the official script!!!</p>
+                </div>
             </div>
         </div>
     </div>
