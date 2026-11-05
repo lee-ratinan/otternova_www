@@ -109,9 +109,9 @@ class Home extends BaseController
                 'slug'         => 'global',
                 'currencyCode' => '<small>US</small>$',
                 'free'         => [0, 0],
-                'boost'        => [9, 90],
-                'velocity'     => [19, 190],
-                'quantum'      => [39, 390],
+                'boost'        => [12, 120],
+                'velocity'     => [24, 240],
+                'quantum'      => [48, 480],
 //                'nova'         => [-1, -1],
             ],
             'TH' => [
