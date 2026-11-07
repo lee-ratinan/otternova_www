@@ -3,48 +3,9 @@
 namespace App\Controllers;
 
 use CodeIgniter\HTTP\ResponseInterface;
-use Config\Services;
 
 class Home extends BaseController
 {
-
-    /**
-     * @param $name
-     * @param $message
-     * @return bool
-     */
-    private function isSpamSubmission ($name, $message): bool
-    {
-        // 1. Check for Same First & Last Name Pattern (e.g., "John John")
-        // This cleans up whitespace and checks if the name repeats.
-        $cleanedName = trim(preg_replace('/\s+/', ' ', $name));
-        $nameParts = explode(' ', $cleanedName);
-        if (count($nameParts) === 2 && strtolower($nameParts[0]) === strtolower($nameParts[1])) {
-            return true;
-        }
-        // 2. Check for HTML link injection
-        if (preg_match('/<a\s+href|\[url=/i', $message)) {
-            return true;
-        }
-        // 3. Count URLs - If more than 2 links, flag it
-        $urlCount = preg_match_all('/https?:\/\//i', $message);
-        if ($urlCount > 2) {
-            return true;
-        }
-        // 4. Spam Keywords Array (Grouped by pipes '|' for regex)
-        $spamPatterns = [
-            'seo|backlink|rank on google|search engine optimization|domain authority|guest post|drive traffic', // SEO
-            'crypto|bitcoin|forex|trading bot|passive income|make \$\$\$|earn cash', // Financial
-            'account suspended|payment declined|copyright infringement|legal action|urgent response', // Phishing
-            'viagra|casino|betting|weight loss pill' // Adult/Pharma
-        ];
-        // Combine all groups into one regex pattern
-        $masterPattern = '/' . implode('|', $spamPatterns) . '/i'; // 'i' flag makes it case-insensitive
-        if (preg_match($masterPattern, $message)) {
-            return true;
-        }
-        return false; // Looks clean!
-    }
 
     /**
      * Home page
@@ -213,10 +174,36 @@ class Home extends BaseController
     {
         $locale = $this->request->getLocale();
         $data   = [
-            'locale' => $locale,
-            'slug'   => 'contact'
+            'locale'    => $locale,
+            'slug'      => 'contact',
+            'formToken' => $this->contactFormToken(),
         ];
         return view('contact', $data);
+    }
+
+    /**
+     * A single-use token from the API for one submission of the contact form; '' when the API cannot be reached,
+     * in which case the submission is refused by the API and the visitor is asked to reload the page.
+     * The API refuses a token sent back within a few seconds, so it is fetched when the form is shown.
+     * @return string
+     */
+    private function contactFormToken(): string
+    {
+        try {
+            $response = service('curlrequest')->get(getenv('CONTACT_FORM_TOKEN_URL'), [
+                'timeout'     => 5,
+                'http_errors' => false,
+                'headers'     => ['Accept' => 'application/json'],
+            ]);
+            $body = json_decode($response->getBody(), true);
+            if ($response->getStatusCode() === 200 && is_string($body['data']['form_token'] ?? null)) {
+                return $body['data']['form_token'];
+            }
+            log_message('error', 'Contact form token not issued: HTTP ' . $response->getStatusCode());
+        } catch (\Exception $e) {
+            log_message('error', 'Contact form token not issued: ' . $e->getMessage());
+        }
+        return '';
     }
 
     /**
@@ -350,59 +337,59 @@ class Home extends BaseController
     }
 
     /**
-     * Submit contact form via email
+     * Submit contact form to the API (POST /v1/contact), which stores it and runs the spam and bot checks.
+     * Answers 'OK' on success, otherwise the message to show, as assets/vendor/php-email-form/validate.js expects.
      * @return ResponseInterface
      */
     public function submitContactForm(): ResponseInterface
     {
-        try {
-            $locale   = $this->request->getPost('locale');
+        $locale = (string) $this->request->getPost('locale');
+        if (in_array($locale, config('App')->supportedLocales, true)) {
             $this->request->setLocale($locale);
-            $to       = getenv('CONTACT_FORM_EMAIL');
-            $no_reply = getenv('NO_REPLY_EMAIL');
-            $company  = $this->request->getPost('company-name');
-            if (!empty($company)) {
-                log_message('error', "Contact form is triggered with company data, ignored it. Company name: $company.");
-                return $this->response->setBody(lang('Contact.form.error'));
-            }
-            $name     = $this->request->getPost('name');
-            $name     = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-            $from     = $this->request->getPost('email');
-            $from     = htmlspecialchars($from, ENT_QUOTES, 'UTF-8');
-            $phone    = $this->request->getPost('phone');
-            $phone     = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
-            $subject  = $this->request->getPost('subject');
-            $subject  = lang('Contact.form.subject-options.' . $subject);
-            $message  = $this->request->getPost('message');
-            $message  = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
-            $date     = date('M d, Y');
-            // Check spam potential
-            $is_spam  = $this->isSpamSubmission($name, $message);
-            if ($is_spam) {
-                $subject = 'SPAM? - ' . $subject;
-            }
-            // Send the email
-            $email    = Services::email();
-            $email->setTo($to);
-            $email->setFrom($no_reply);
-            $email->setReplyTo($from);
-            $email_subject = "[OtterNova][$subject] From: $name - $date";
-            $email_body    = "Contact Form Submission\n\nName: $name\nEmail: $from\nPhone: $phone\nMessage: $message\nLanguage: $locale\n\nThis email is system generated.\nOtterNova";
-            $email->setSubject($email_subject);
-            $email->setMessage($email_body);
-            log_message('debug', $email_subject);
-            log_message('debug', $email_body);
-            if ($email->send()) {
-                log_message('debug', "Email is sent.");
-                return $this->response->setBody('OK');
-            } else {
-                log_message('error', "Email not sent: " . $email->printDebugger());
-                return $this->response->setBody(lang('Contact.form.error'));
-            }
-        } catch (\Exception $e) {
-            log_message('error', "Email not sent: " . $e->getMessage());
-            return $this->response->setBody(lang('Contact.form.error') . ': ' . $e->getMessage());
         }
+        $subject = (string) $this->request->getPost('subject');
+        if (in_array($subject, ['general', 'technical', 'sales'], true)) {
+            $subject = lang('Contact.form.subject-options.' . $subject);
+        }
+        $payload = [
+            'name'       => (string) $this->request->getPost('name'),
+            'email'      => (string) $this->request->getPost('email'),
+            'phone'      => (string) $this->request->getPost('phone'),
+            'subject'    => $subject,
+            'message'    => (string) $this->request->getPost('message'),
+            'locale'     => $locale,
+            'form_token' => (string) $this->request->getPost('form_token'),
+            'website'    => (string) $this->request->getPost('website'), // the honeypot; the API decides what to do
+        ];
+        try {
+            $response = service('curlrequest')->post(getenv('CONTACT_FORM_SUBMISSION_URL'), [
+                'json'        => $payload,
+                'timeout'     => 10,
+                'http_errors' => false,
+                'headers'     => [
+                    'Accept'          => 'application/json',
+                    // the API counts messages per visitor, so it needs the visitor's address, not this server's;
+                    // it trusts this header only from the addresses in its PROXY_IPS
+                    'X-Forwarded-For' => $this->request->getIPAddress(),
+                    'User-Agent'      => (string) $this->request->getUserAgent(),
+                ],
+            ]);
+        } catch (\Exception $e) {
+            log_message('error', 'Contact form not sent to the API: ' . $e->getMessage());
+            return $this->response->setBody(lang('Contact.form.error'));
+        }
+        $status = $response->getStatusCode();
+        if ($status === 201) {
+            return $this->response->setBody('OK');
+        }
+        $body = json_decode($response->getBody(), true);
+        if ($status >= 500 || ! is_array($body)) {
+            log_message('error', "Contact form refused by the API: HTTP $status");
+            return $this->response->setBody(lang('Contact.form.error'));
+        }
+        // 400 (form expired), 422 (fields to fix) or 429 (too many): the API's message is meant for the visitor
+        $lines = array_merge([$body['message'] ?? lang('Contact.form.error')], array_values($body['errors'] ?? []));
+        return $this->response->setBody(esc(implode(' ', $lines)));
     }
 
     /**

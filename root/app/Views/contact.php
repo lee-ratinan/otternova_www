@@ -44,6 +44,12 @@
                                 <textarea class="form-control" name="message" id="message" rows="5" placeholder="<?= lang('Contact.form.message') ?>" required></textarea>
                             </div>
                             <input type="hidden" name="locale" value="<?= $locale ?>">
+                            <input type="hidden" name="form_token" value="<?= esc($formToken) ?>">
+                            <?php /* honeypot: hidden from people, so only a bot fills it in */ ?>
+                            <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+                                <label for="website">Website</label>
+                                <input type="text" name="website" id="website" value="" tabindex="-1" autocomplete="off">
+                            </div>
                             <div class="my-3">
                                 <div class="loading"><?= lang('Contact.form.loading') ?></div>
                                 <div class="error-message"></div>
