@@ -5598,4 +5598,6 @@ section,
   background-color: #282828;
 }
 
-
+.payment-methods img {
+  height: 1.25rem;
+}

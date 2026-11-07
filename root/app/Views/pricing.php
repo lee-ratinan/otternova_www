@@ -120,6 +120,12 @@
                         </table>
                     </div>
                 </div>
+                <div class="col-12 p-5 text-center payment-methods">
+                    <h6 class="mb-3"><?= lang('Pricing.payment-methods.title') ?></h6>
+                    <?= lang('Pricing.payment-methods.bank-transfer') ?>,
+                    <img src="<?= base_url('assets/img/payment/promptpay.webp') ?>" alt="<?= lang('Pricing.payment-methods.promptpay') ?>" title="<?= lang('Pricing.payment-methods.promptpay') ?>" />
+                    <?= lang('Pricing.payment-methods.promptpay') ?>
+                </div>
             </div>
             <div class="row mt-5 g-3 justify-content-center d-none">
                 <div class="col text-center">

@@ -32,10 +32,15 @@ return [
         'webpages'                 => 'Webpages',
         'image_per_artifact'       => 'Images per product/service',
         'image_per_webpage'        => 'Images per webpage',
-        'ai_credit_text_attempts'  => 'Attempts to generate text per entity',
-        'ai_credit_image_attempts' => 'Attempts to generate images',
+        'ai_credit_text_attempts'  => 'Attempts to generate AI text per product/service/webpage',
+        'ai_credit_image_attempts' => 'Attempts to generate AI images',
         'private_session_booking'  => 'Private session booking',
         'session_registration'     => 'Joint-group session registration',
+    ],
+    'payment-methods'     => [
+        'title'         => 'Payment Methods',
+        'bank-transfer' => 'Bank transfer',
+        'promptpay'     => 'PromptPay',
     ],
 
     // ------------------------------------------------------------------
