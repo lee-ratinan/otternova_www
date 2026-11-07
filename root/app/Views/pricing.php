@@ -62,6 +62,9 @@
                 </div>
             </div>
             <div class="row mt-5 g-3 justify-content-center">
+                <div class="col-12 p-5 text-center">
+                    <h1 id="typing-target" data-text="More regional pricing coming soon!;各国向けの料金プランを近日公開！;Harga khusus untuk negara Anda akan segera tersedia!;即將推出各地區專屬價格！;Harga mengikut negara akan datang tidak lama lagi!"></h1>
+                </div>
                 <div class="col col-lg-10 col-xl-8">
                     <div class="table-responsive">
                         <table class="table table-hover table-striped table-pricing">
@@ -138,4 +141,5 @@
             </div>
         </div>
     </section>
+    <script src="<?= base_url('assets/js/typeText.js') ?>"></script>
 <?php $this->endSection() ?>
