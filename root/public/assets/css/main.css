@@ -5562,3 +5562,40 @@ section,
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.table-pricing {
+  width: 100%;
+}
+/*.table-pricing td, .table-pricing th {*/
+/*  padding: 10px;*/
+/*}*/
+/*.table-pricing tr td:first-child, .table-pricing tr th:first-child {*/
+/*  padding-left: 20px;*/
+/*}*/
+.table-pricing th {
+  font-family: var(--heading-font), sans-serif;
+}
+.lang-th .table-pricing th {
+  font-family: var(--heading-th-font), sans-serif;
+}
+.table-pricing td, .table-pricing th {
+  background-color: #eeeeee;
+  color: #111111;
+}
+.table-pricing tr:nth-of-type(odd) td {
+  background-color: #e0e0e0;
+}
+.table-pricing tr:hover td {
+  background-color: var(--accent-color) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .table-pricing td, [data-theme="dark"] .table-pricing th {
+  background-color: #111111;
+  color: #eeeeee;
+}
+[data-theme="dark"] .table-pricing tr:nth-of-type(odd) td {
+  background-color: #282828;
+}
+
+

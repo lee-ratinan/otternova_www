@@ -108,19 +108,21 @@ class Home extends BaseController
             'ZZ' => [
                 'slug'         => 'global',
                 'currencyCode' => '<small>US</small>$',
+                'iso4217'      => 'USD',
                 'free'         => [0, 0],
                 'boost'        => [12, 120],
                 'velocity'     => [24, 240],
                 'quantum'      => [48, 480],
-//                'nova'         => [-1, -1],
+                'nova'         => [-1, -1],
             ],
             'TH' => [
                 'slug'         => 'thailand',
                 'currencyCode' => '฿',
+                'iso4217'      => 'THB',
                 'free'         => [0, 0],
-                'boost'        => [319, 2990],
-                'velocity'     => [649, 5990],
-                'quantum'      => [1299, 12900],
+                'boost'        => [319, 3190],
+                'velocity'     => [649, 6490],
+                'quantum'      => [1299, 12990],
 //                'nova'         => [-1, -1],
             ]
         ];
@@ -169,13 +171,36 @@ class Home extends BaseController
 //                'recommended' => false
 //            ],
         ];
+        $limits  = [
+            'keys' => [
+                config('Config\PlanLimits')::STORES                  => '<i class="bi bi-shop"></i>',
+                config('Config\PlanLimits')::EMPLOYEES               => '<i class="bi bi-people"></i>',
+                config('Config\PlanLimits')::PRODUCTS                => '<i class="bi bi-box"></i>',
+                config('Config\PlanLimits')::SERVICES                => '<i class="bi bi-stars"></i>',
+                config('Config\PlanLimits')::VARIANTS                => '<i class="bi bi-hand-index-thumb"></i>',
+                config('Config\PlanLimits')::WEBPAGES                => '<i class="bi bi-file-earmark"></i>',
+                config('Config\PlanLimits')::IMAGE_PER_ARTIFACT      => '<i class="bi bi-images"></i>',
+                config('Config\PlanLimits')::IMAGE_PER_WEBPAGE       => '<i class="bi bi-images"></i>',
+                config('Config\PlanLimits')::AI_CREDIT_TEXT_ATTEMPTS => '<i class="bi bi-cpu-fill bi-ai-gradient"></i>',
+                config('Config\PlanLimits')::AI_CREDIT_IMG_ATTEMPTS  => '<i class="bi bi-cpu-fill bi-ai-gradient"></i>',
+                config('Config\PlanLimits')::PRIVATE_SESSION_BOOKING => '<i class="bi bi-person-lock"></i>',
+                config('Config\PlanLimits')::SESSION_REGISTRATION    => '<i class="bi bi-globe"></i>',
+            ],
+            'data' => [
+                'free'     => config('Config\PlanLimits')->forPlan('free'),
+                'boost'    => config('Config\PlanLimits')->forPlan('boost'),
+                'velocity' => config('Config\PlanLimits')->forPlan('velocity'),
+                'quantum'  => config('Config\PlanLimits')->forPlan('quantum'),
+            ],
+        ];
         $data    = [
             'locale'      => $locale,
             'countryCode' => $countryCode,
             'slug'        => 'pricing',
             'uri'         => $uri,
             'pricing'     => $pricing,
-            'plans'       => $plans
+            'plans'       => $plans,
+            'limits'      => $limits,
         ];
         return view('pricing', $data);
     }

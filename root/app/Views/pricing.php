@@ -16,7 +16,7 @@
             <div class="row gy-4 justify-content-center">
                 <?php foreach ($plans as $planSlug => $plan): ?>
                     <!-- <?= esc($planSlug) ?> plan -->
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="pricing-item<?= $plan['recommended'] ? ' featured' : '' ?>">
                             <?php if ($plan['recommended']): ?>
                                 <div class="pricing-badge"><?= lang('Pricing.recommended') ?></div>
@@ -49,11 +49,6 @@
                                 </div>
                             <?php endif; ?>
                             <p class="description"><?= lang('Pricing.plans.' . $planSlug . '.description') ?></p>
-                            <ul class="features-list">
-                                <?php foreach (lang('Pricing.plans.' . $planSlug . '.features') as $feature): ?>
-                                    <li><i class="bi bi-check2"></i> <?= $feature ?></li>
-                                <?php endforeach; ?>
-                            </ul>
                             <?php if ('nova' == $planSlug): ?>
                                 <a class="btn-pricing" href="<?= base_url($locale . '/contact') ?>"><?= lang('Contact.form.title') ?></a>
                             <?php else: ?>
@@ -64,6 +59,63 @@
                 <?php endforeach; ?>
                 <div class="col-12">
                     <p class="text-center">* <?= lang('Pricing.tax-info') ?></p>
+                </div>
+            </div>
+            <div class="row mt-5 g-3 justify-content-center">
+                <div class="col col-lg-10 col-xl-8">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped table-pricing">
+                            <thead>
+                            <tr>
+                                <th><?= lang('Pricing.features.name') ?></th>
+                                <?php foreach ($plans as $planSlug => $data): ?>
+                                    <th class="text-center">
+                                        <i class="bi bi-<?= $data['icon'] ?>"></i>
+                                        <?= lang('Pricing.plans.' . $planSlug . '.name') ?>
+                                    </th>
+                                <?php endforeach; ?>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th colspan="<?= count($limits['keys']) + 1 ?>" class="text-center">
+                                    <b><?= lang('Pricing.price') ?></b>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td><?= lang('Pricing.price-per-month') ?></td>
+                                <?php foreach ($plans as $planSlug => $data): ?>
+                                    <td class="text-center"><?= formatCurrency($data['price'][0], $pricing[$countryCode]['iso4217']) ?></td>
+                                <?php endforeach; ?>
+                            </tr>
+                            <tr>
+                                <td><?= lang('Pricing.price-per-year') ?></td>
+                                <?php foreach ($plans as $planSlug => $data): ?>
+                                    <td class="text-center"><?= formatCurrency($data['price'][1], $pricing[$countryCode]['iso4217']) ?></td>
+                                <?php endforeach; ?>
+                            </tr>
+                            <tr>
+                                <th colspan="<?= count($limits['keys']) + 1 ?>" class="text-center">
+                                    <b><?= lang('Pricing.features.limits') ?></b>
+                                </th>
+                            </tr>
+                            <?php foreach ($limits['keys'] as $feature_key => $icon): ?>
+                            <tr>
+                                <td><?= $icon  . ' &nbsp; ' . lang('Pricing.features.' . $feature_key) ?></td>
+                                <?php foreach ($plans as $planSlug => $dummy): ?>
+                                    <td class="text-center">
+                                        <?php if (!$limits['data'][$planSlug][$feature_key]) : ?>
+                                            <i class="bi bi-ban text-danger"></i>
+                                        <?php else : ?>
+                                            <?= $limits['data'][$planSlug][$feature_key] ?>
+                                        <?php endif; ?>
+                                    </td>
+                                <?php endforeach; ?>
+                            </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="row mt-5 g-3 justify-content-center d-none">
