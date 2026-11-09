@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
     <section id="hero" class="hero section dark-background">
         <div class="hero-background">
-            <img src="<?= base_url('assets/img/website/hero-img.webp') ?>" alt="<?= lang('Meta.site-name') ?>"
+            <img src="<?= base_url('assets/img/website/hero-img.webp') ?>" alt="<?= lang('Meta.site-title') ?>"
                  data-aos="fade-in" data-aos-duration="1000">
             <div class="overlay"></div>
         </div>

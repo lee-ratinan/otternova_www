@@ -35,6 +35,7 @@ return [
     'useful-links'            => 'Useful Links',
     'site-footer-description' => '<b>Smarter business. Simpler growth.</b><br/>Next-gen business solutions that you can trust.',
     'toggle-mode'             => 'Toggle dark/light mode',
+    'mode'                    => 'Mode',
     'links'                   => [
         'other-links' => 'Other links',
         'client'      => 'Client System',

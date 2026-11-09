@@ -5601,3 +5601,7 @@ section,
 .payment-methods img {
   height: 1.25rem;
 }
+
+#theme-toggle {
+  cursor: pointer;
+}

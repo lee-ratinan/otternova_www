@@ -110,24 +110,25 @@
 </head>
 <body class="index-page lang-<?= $locale ?>">
 <header id="header" class="header fixed-top">
-    <div class="topbar d-flex align-items-center dark-background">
+    <?php /* <div class="topbar d-flex align-items-center dark-background">
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:<?= getenv('OTTER_EMAIL') ?>"><?= getenv('OTTER_EMAIL') ?></a></i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
-                <?php
+                < ?php
                 $social = listOtterSocialMedia();
                 foreach ($social as $key => $value) {
                     if (!empty($value)) {
                         echo '<a href="' . $value . '" class="' . $key . '"><i class="bi bi-' . $key . '"></i></a>';
                     }
                 }
-                ?>
-                <a id="theme-toggle" aria-label="<?= lang('Meta.toggle-mode') ?>" href="#"></a>
+                ? >
+                <a id="theme-toggle" aria-label="< ?= lang('Meta.toggle-mode') ? >" href="#"></a>
             </div>
         </div>
-    </div><!-- End Top Bar -->
+    </div><!-- End Top Bar --> */ ?>
+    <?php $social = listOtterSocialMedia(); ?>
     <div class="branding d-flex align-items-cente">
         <div class="container position-relative d-flex align-items-center justify-content-between">
             <a href="<?= base_url($locale . '/home') ?>" class="logo d-flex align-items-center">
@@ -178,6 +179,7 @@
                     }
                     ?>
                 </div>
+                <p><?= lang('Meta.mode') ?> <a id="theme-toggle" aria-label="<?= lang('Meta.toggle-mode') ?>"></a></p>
             </div>
             <div class="col-lg-2 col-6 footer-links">
                 <h4><?= lang('Meta.useful-links') ?></h4>
