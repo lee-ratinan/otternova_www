@@ -4,9 +4,8 @@
         #target::after {content: '|';animation: blink 0.7s infinite;}
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     </style>
-    <div class="page-title dark-background"
-         style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
-        <div class="container position-relative">
+    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
+        <div class="container position-relative"  data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
                 <ol>
@@ -21,7 +20,7 @@
             <div class="row justify-content-center g-3">
                 <div class="col-12 text-center">
                     <?php foreach ($supported as $languageCode) : ?>
-                        <a class="btn btn-link mx-5 btn-minimal rounded-0 mb-3" href="<?= base_url($languageCode . '/home') ?>">
+                        <a class="btn btn-link mx-5 btn-minimal rounded-0 mb-3" href="<?= base_url($languageCode . '/home') ?>" data-aos="fade-up" data-aos-duration="1000">
                             <?php
                             $flag = substr($languageCode, -2);
                             echo '<i class="fi fi-' . strtolower($flag) . ' me-3"></i>';

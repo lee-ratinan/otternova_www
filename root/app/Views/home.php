@@ -69,8 +69,8 @@
     <section id="featured-services" class="featured-services section light-background">
         <!-- Section Title -->
         <div class="container section-title">
-            <h2><?= lang('Home.featured-services.title') ?></h2>
-            <p><?= lang('Home.featured-services.description') ?></p>
+            <h2 data-aos="fade-left" data-aos-duration="600"><?= lang('Home.featured-services.title') ?></h2>
+            <p data-aos="fade-left" data-aos-duration="800"><?= lang('Home.featured-services.description') ?></p>
         </div><!-- End Section Title -->
         <div class="container">
             <div class="row">
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="services-image">
-                        <img src="<?= base_url('assets/img/website/our-impressive-services.webp') ?>" alt="<?= lang('Home.featured-services.image-alt') ?>" class="img-fluid">
+                        <img src="<?= base_url('assets/img/website/our-impressive-services.webp') ?>" alt="<?= lang('Home.featured-services.image-alt') ?>" class="img-fluid" data-aos="fade-up" data-aos-duration="1000">
                         <div class="shape-circle"></div>
                         <div class="shape-accent"></div>
                     </div>
@@ -214,7 +214,7 @@
     </section>
     <section id="faq" class="faq section">
         <!-- Section Title -->
-        <div class="container section-title">
+        <div class="container section-title" data-aos="fade-left" data-aos-duration="800">
             <h2><?= lang('Home.faq.title') ?></h2>
             <p><?= lang('Home.faq.description') ?></p>
         </div><!-- End Section Title -->
@@ -223,7 +223,7 @@
                 <div class="col-lg-10">
                     <div class="faq-wrapper">
                         <?php for ($i = 1; $i <= 7; $i++) : ?>
-                        <div class="faq-item <?= (1 == $i ? 'faq-active' : '') ?>">
+                        <div class="faq-item <?= (1 == $i ? 'faq-active' : '') ?>" data-aos="fade-up" data-aos-duration="<?= $i * 500 ?>">
                             <div class="faq-header">
                                 <div class="faq-icon">
                                     <i class="bi bi-question-circle"></i>

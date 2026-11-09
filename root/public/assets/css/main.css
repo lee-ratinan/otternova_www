@@ -1899,7 +1899,7 @@ section,
   top: -40px;
   height: 180px;
   width: 180px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 60%);
   border-radius: 50%;
   z-index: 1;
 }
@@ -1910,7 +1910,7 @@ section,
   left: -30px;
   height: 100px;
   width: 100px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 60%);
   z-index: 1;
   animation: float 5s infinite ease-in-out;
 }

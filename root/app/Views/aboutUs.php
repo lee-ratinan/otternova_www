@@ -1,7 +1,7 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
     <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
-        <div class="container position-relative">
+        <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
                 <ol>
@@ -22,12 +22,12 @@
                 <div class="row g-0">
                     <div class="col-lg-7">
                         <div class="cta-content p-5">
-                            <span class="badge-custom"><?= lang('AboutUs.call-to-action.badge') ?></span>
-                            <h2 class="mt-4 mb-4"><?= lang('AboutUs.call-to-action.title') ?></h2>
+                            <span class="badge-custom" data-aos="fade-left" data-aos-duration="500"><?= lang('AboutUs.call-to-action.badge') ?></span>
+                            <h2 class="mt-4 mb-4" data-aos="fade-left" data-aos-duration="800"><?= lang('AboutUs.call-to-action.title') ?></h2>
                             <?php foreach (lang('AboutUs.call-to-action.description') as $line) : ?>
-                                <p><?= $line ?></p>
+                                <p data-aos="fade-left" data-aos-duration="900"><?= $line ?></p>
                             <?php endforeach; ?>
-                            <div class="row benefits-row mt-4 mb-5">
+                            <div class="row benefits-row mt-4 mb-5" data-aos="fade-left" data-aos-duration="1200">
                                 <div class="col-md-6">
                                     <div class="benefit-item">
                                         <div class="icon-box">
@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="action-buttons">
+                            <div class="action-buttons" data-aos="fade-right" data-aos-duration="1000">
                                 <a href="<?= getenv('LINK_CLIENT') ?>" class="btn btn-primary"><?= lang('AboutUs.call-to-action.start-now') ?></a>
                                 <a href="<?= base_url($locale . '/solutions') ?>" class="btn btn-outline"><?= lang('AboutUs.call-to-action.learn-more') ?></a>
                                 <div class="guarantee-badge">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <div class="cta-image-container">
+                        <div class="cta-image-container" data-aos="fade-right" data-aos-duration="800">
                             <img src="<?= base_url('assets/img/website/hero-about-us.webp') ?>" alt="<?= lang('AboutUs.call-to-action.image-alt') ?>" class="img-fluid main-image">
                             <div class="floating-element element-1">
                                 <i class="bi bi-star-fill"></i>

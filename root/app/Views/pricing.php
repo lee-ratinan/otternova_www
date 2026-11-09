@@ -1,7 +1,7 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
     <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
-        <div class="container position-relative">
+        <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
                 <ol>
@@ -14,9 +14,11 @@
     <section id="pricing" class="pricing section">
         <div class="container">
             <div class="row gy-4 justify-content-center">
+                <?php $i = 1; ?>
                 <?php foreach ($plans as $planSlug => $plan): ?>
                     <!-- <?= esc($planSlug) ?> plan -->
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="<?= $i * 400 ?>">
+                        <?php $i++; ?>
                         <div class="pricing-item<?= $plan['recommended'] ? ' featured' : '' ?>">
                             <?php if ($plan['recommended']): ?>
                                 <div class="pricing-badge"><?= lang('Pricing.recommended') ?></div>
@@ -57,17 +59,17 @@
                         </div>
                     </div><!-- End <?= esc($planSlug) ?> plan -->
                 <?php endforeach; ?>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-duration="800">
                     <p class="text-center">* <?= lang('Pricing.tax-info') ?></p>
                 </div>
             </div>
             <div class="row mt-5 g-3 justify-content-center">
-                <div class="col-12 p-5 text-center">
+                <div class="col-12 p-5 text-center" data-aos="fade-left" data-aos-duration="800">
                     <h1 id="typing-target" data-text="More regional pricing coming soon!;各国向けの料金プランを近日公開！;Harga khusus untuk negara Anda akan segera tersedia!;即將推出各地區專屬價格！;Harga mengikut negara akan datang tidak lama lagi!"></h1>
                 </div>
                 <div class="col col-lg-10 col-xl-8">
                     <div class="table-responsive">
-                        <table class="table table-hover table-striped table-pricing">
+                        <table class="table table-hover table-striped table-pricing" data-aos="fade-right" data-aos-duration="800">
                             <thead>
                             <tr>
                                 <th><?= lang('Pricing.features.name') ?></th>
@@ -120,7 +122,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-12 p-5 text-center payment-methods">
+                <div class="col-12 p-5 text-center payment-methods" data-aos="fade-up" data-aos-duration="800">
                     <h6 class="mb-3"><?= lang('Pricing.payment-methods.title') ?></h6>
                     <?= lang('Pricing.payment-methods.bank-transfer') ?>,
                     <img src="<?= base_url('assets/img/payment/promptpay.webp') ?>" alt="<?= lang('Pricing.payment-methods.promptpay') ?>" title="<?= lang('Pricing.payment-methods.promptpay') ?>" />

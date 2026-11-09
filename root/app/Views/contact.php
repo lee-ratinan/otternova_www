@@ -1,7 +1,7 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
     <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
-        <div class="container position-relative">
+        <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
                 <ol>
@@ -14,7 +14,7 @@
     <section id="contact" class="contact section">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-duration="1200">
                     <div class="contact-form-container mb-3">
                         <h3><?= lang('Contact.form.title') ?></h3>
                         <p><?= lang('Contact.form.subtitle') ?></p>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="contact-cards-container">
-                        <div class="contact-card w-100">
+                        <div class="contact-card w-100" data-aos="fade-left" data-aos-duration="600">
                             <div class="icon-box">
                                 <i class="bi bi-envelope"></i>
                             </div>
@@ -73,7 +73,7 @@
                                 <p><?= getenv('OTTER_EMAIL') ?></p>
                             </div>
                         </div>
-                        <div class="contact-card w-100">
+                        <div class="contact-card w-100" data-aos="fade-left" data-aos-duration="800">
                             <div class="icon-box">
                                 <i class="bi bi-clock"></i>
                             </div>
@@ -82,30 +82,32 @@
                                 <p><?= lang('Contact.info.open-detail') ?></p>
                             </div>
                         </div>
-                        <div class="contact-card w-100">
+                        <?php
+                        $social = listOtterSocialMedia();
+                        $socialString = '';
+                        foreach ($social as $key => $value) {
+                            if (!empty($value)) {
+                                $socialString .= '<a href="' . $value . '" class="' . $key . '"><i class="bi bi-' . $key . ' me-3"></i> ' . lang('Contact.social-media.' . $key) . '</a><br/>';
+                            }
+                        }
+                        ?>
+                        <div class="contact-card w-100 <?= (empty($socialString) ? 'd-none' : '') ?>" data-aos="fade-left" data-aos-duration="1000">
                             <div class="icon-box">
                                 <i class="bi bi-share"></i>
                             </div>
                             <div class="contact-text">
                                 <h4><?= lang('Contact.info.social-media') ?></h4>
-                                <?php
-                                $social = listOtterSocialMedia();
-                                foreach ($social as $key => $value) {
-                                    if (!empty($value)) {
-                                        echo '<a href="' . $value . '" class="' . $key . '"><i class="bi bi-' . $key . ' me-3"></i> ' . lang('Contact.social-media.' . $key) . '</a><br/>';
-                                    }
-                                }
-                                ?>
+                                <?= $socialString ?>
                             </div>
                         </div>
-                        <div class="contact-card w-100">
+                        <div class="contact-card w-100" data-aos="fade-left" data-aos-duration="1200">
                             <div class="display-6"><i class="bi bi-shield-check"></i></div>
                             <p>
                                 <b><?= lang('Contact.text.shield-1') ?></b><br/>
                                 <?= lang('Contact.text.shield-2') ?>
                             </p>
                         </div>
-                        <div class="contact-card w-100">
+                        <div class="contact-card w-100" data-aos="fade-left" data-aos-duration="1400">
                             <div class="display-6"><i class="bi bi-clock-history"></i></div>
                             <p>
                                 <b><?= lang('Contact.text.clock-1') ?></b><br/>

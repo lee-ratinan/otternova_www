@@ -1,7 +1,7 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
     <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
-        <div class="container position-relative">
+        <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
                 <ol>
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="content">
+                    <div class="content" data-aos="fade-right" data-aos-duration="600">
                         <h2><?= lang('Solutions.about.title') ?></h2>
                         <p class="lead"><?= lang('Solutions.about.lead') ?></p>
                         <h3 class="mb-3"><?= lang('Solutions.about.features-title') ?></h3>
@@ -40,8 +40,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="image-wrapper">
-                        <img src="<?= base_url('assets/img/website/hero-solutions-1.webp') ?>" alt="<?= lang('Solutions.about.image-alt') ?>" class="img-fluid main-image">
-                        <div class="floating-card">
+                        <img src="<?= base_url('assets/img/website/hero-solutions-1.webp') ?>" alt="<?= lang('Solutions.about.image-alt') ?>" class="img-fluid main-image" data-aos="fade-right" data-aos-duration="800">
+                        <div class="floating-card" data-aos="fade-left" data-aos-duration="1200">
                             <div class="card-content">
                                 <i class="bi bi-award"></i>
                                 <div class="text">
@@ -56,7 +56,7 @@
         </div>
     </section>
     <section id="featured-services" class="featured-services section light-background">
-        <div class="container section-title">
+        <div class="container section-title" data-aos="fade-up" data-aos-duration="800">
             <h2><?= lang('Solutions.featured-services.title') ?></h2>
             <p><?= lang('Solutions.featured-services.description') ?></p>
         </div>
@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="services-content" data-aos="fade-up" data-aos-duration="900">
-                        <h2><?= lang('Solutions.featured-services.heading') ?></h2>
+                        <h2 data-aos="fade-up" data-aos-duration="500"><?= lang('Solutions.featured-services.heading') ?></h2>
                         <p data-aos="fade-up" data-aos-duration="800"><?= lang('Solutions.featured-services.intro') ?></p>
                         <div class="mt-4" data-aos="fade-up" data-aos-duration="1100">
                             <a href="<?= base_url($locale . '/contact') ?>" class="btn-consultation"><span><?= lang('Solutions.featured-services.request-consultation') ?></span><i class="bi bi-arrow-right"></i></a>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="services-image">
-                        <img src="<?= base_url('assets/img/website/hero-solutions-2.webp') ?>" alt="<?= lang('Solutions.featured-services.image-alt') ?>" class="img-fluid">
+                        <img src="<?= base_url('assets/img/website/hero-solutions-2.webp') ?>" alt="<?= lang('Solutions.featured-services.image-alt') ?>" class="img-fluid" data-aos="fade-right" data-aos-duration="800">
                         <div class="shape-circle"></div>
                         <div class="shape-accent"></div>
                     </div>
