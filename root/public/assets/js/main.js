@@ -205,3 +205,6 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+/* AOS Animation */
+AOS.init();

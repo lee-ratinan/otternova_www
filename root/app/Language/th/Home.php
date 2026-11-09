@@ -11,9 +11,9 @@ return [
         'explore-services' => 'ดูบริการของเรา',
         'watch-demo'       => 'ดูตัวอย่างการใช้งาน',
         'stats'            => [
-            'uptime-target' => ['value' => '99%', 'label' => 'เป้าหมายเวลาออนไลน์ (Uptime)'],
-            'support-sla'   => ['value' => '24 ชม.', 'label' => 'เวลาตอบกลับของทีมซัพพอร์ต'],
-            'human-tested'  => ['value' => '100%', 'label' => 'ผ่านการทดสอบโดยคน'],
+            'uptime-target' => ['value' => '<span class="purecounter" data-purecounter-start="0" data-purecounter-end="99">99</span>%', 'label' => 'เป้าหมายเวลาออนไลน์ (Uptime)'],
+            'support-sla'   => ['value' => '<span class="purecounter" data-purecounter-start="0" data-purecounter-end="24">24</span> ชม.', 'label' => 'เวลาตอบกลับของทีมซัพพอร์ต'],
+            'human-tested'  => ['value' => '<span class="purecounter" data-purecounter-start="0" data-purecounter-end="100">100</span>%', 'label' => 'ผ่านการทดสอบโดยคน'],
         ],
         'features'         => [
             'economical'  => 'ประหยัด',

@@ -11,9 +11,9 @@ return [
         'explore-services' => 'Explore Services',
         'watch-demo'       => 'Watch Demo',
         'stats'            => [
-            'uptime-target' => ['value' => '99%', 'label' => 'Uptime Target'],
-            'support-sla'   => ['value' => '24 hrs', 'label' => 'Support Response Time'],
-            'human-tested'  => ['value' => '100%', 'label' => 'Human-Tested'],
+            'uptime-target' => ['value' => '<span class="purecounter" data-purecounter-start="0" data-purecounter-end="99">99</span>%', 'label' => 'Uptime Target'],
+            'support-sla'   => ['value' => '<span class="purecounter" data-purecounter-start="0" data-purecounter-end="24">24</span> hrs', 'label' => 'Support Response Time'],
+            'human-tested'  => ['value' => '<span class="purecounter" data-purecounter-start="0" data-purecounter-end="100">100</span>%', 'label' => 'Human-Tested'],
         ],
         'features'         => [
             'economical'  => 'Affordable',
