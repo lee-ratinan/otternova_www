@@ -63,10 +63,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="services-content" data-aos-duration="900">
+                    <div class="services-content" data-aos="fade-up" data-aos-duration="900">
                         <h2><?= lang('Solutions.featured-services.heading') ?></h2>
-                        <p data-aos-duration="800"><?= lang('Solutions.featured-services.intro') ?></p>
-                        <div class="mt-4" data-aos-duration="1100">
+                        <p data-aos="fade-up" data-aos-duration="800"><?= lang('Solutions.featured-services.intro') ?></p>
+                        <div class="mt-4" data-aos="fade-up" data-aos-duration="1100">
                             <a href="<?= base_url($locale . '/contact') ?>" class="btn-consultation"><span><?= lang('Solutions.featured-services.request-consultation') ?></span><i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>

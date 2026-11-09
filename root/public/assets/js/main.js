@@ -207,4 +207,8 @@
 })();
 
 /* AOS Animation */
-AOS.init();
+AOS.init({
+  duration: 600,
+  easing: "ease-in-out",
+  once: true
+});

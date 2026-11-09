@@ -7,7 +7,7 @@
     </div>
     <main class="main">
         <section id="content-section" class="starter-section section mt-5">
-            <div class="container aos-init aos-animate mt-5" data-aos="fade-up">
+            <div class="container mt-5" data-aos="fade-up">
                 <div class="row">
                     <div class="col col-lg-10 col-xl-8">
                         <div id="source" class="d-none"><?php include_once 'docs/generic-terms-' . strtolower($locale) . '.md'; ?></div>

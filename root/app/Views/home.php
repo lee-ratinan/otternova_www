@@ -3,17 +3,17 @@
     <section id="hero" class="hero section dark-background">
         <div class="hero-background">
             <img src="<?= base_url('assets/img/website/hero-img.webp') ?>" alt="<?= lang('Meta.site-name') ?>"
-                 data-aos-duration="1000">
+                 data-aos="fade-in" data-aos-duration="1000">
             <div class="overlay"></div>
         </div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="hero-content">
-                        <span class="hero-badge"><?= lang('Home.hero.badge') ?></span>
-                        <h1><?= lang('Home.hero.title') ?></h1>
-                        <p><?= lang('Home.hero.description') ?></p>
-                        <div class="hero-actions">
+                        <span class="hero-badge" data-aos="fade-up" data-aos-duration="500"><?= lang('Home.hero.badge') ?></span>
+                        <h1 data-aos="fade-up" data-aos-duration="700"><?= lang('Home.hero.title') ?></h1>
+                        <p data-aos="fade-up" data-aos-duration="900"><?= lang('Home.hero.description') ?></p>
+                        <div class="hero-actions" data-aos="fade-up" data-aos-duration="1000">
                             <a href="<?= base_url($locale . '/solutions') ?>" class="btn-primary"><?= lang('Home.hero.explore-services') ?></a>
                             <!-- TODO: add the video -->
                             <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn-secondary glightbox d-none">
@@ -21,7 +21,7 @@
                                 <span><?= lang('Home.hero.watch-demo') ?></span>
                             </a>
                         </div>
-                        <div class="hero-stats">
+                        <div class="hero-stats" data-aos="fade-up" data-aos-duration="1200">
                             <div class="stat-item">
                                 <span class="stat-number"><?= lang('Home.hero.stats.uptime-target.value') ?></span>
                                 <span class="stat-label"><?= lang('Home.hero.stats.uptime-target.label') ?></span>
@@ -41,21 +41,21 @@
                     <div class="hero-visual">
                         <div class="row g-3">
                             <div class="col-6">
-                                <div class="feature-card">
+                                <div class="feature-card" data-aos="fade-up" data-aos-duration="500">
                                     <i class="bi bi-currency-dollar"></i>
                                     <span><?= lang('Home.hero.features.economical') ?></span>
                                 </div>
-                                <div class="feature-card">
+                                <div class="feature-card" data-aos="fade-up" data-aos-duration="600">
                                     <i class="bi bi-emoji-smile"></i>
                                     <span><?= lang('Home.hero.features.convenience') ?></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="feature-card">
+                                <div class="feature-card" data-aos="fade-up" data-aos-duration="700">
                                     <i class="bi bi-speedometer2"></i>
                                     <span><?= lang('Home.hero.features.flexible') ?></span>
                                 </div>
-                                <div class="feature-card">
+                                <div class="feature-card" data-aos="fade-up" data-aos-duration="800">
                                     <i class="bi bi-shield-check"></i>
                                     <span><?= lang('Home.hero.features.secure') ?></span>
                                 </div>
@@ -75,12 +75,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="services-content" data-aos-duration="900">
+                    <div class="services-content" data-aos="fade-up" data-aos-duration="900">
                         <span class="subtitle"><?= lang('Home.featured-services.subtitle') ?></span>
                         <h2><?= lang('Home.featured-services.heading') ?></h2>
-                        <p data-aos-duration="800"><?= lang('Home.featured-services.intro-1') ?></p>
-                        <p data-aos-duration="900"><?= lang('Home.featured-services.intro-2') ?></p>
-                        <div class="mt-4" data-aos-duration="1100">
+                        <p data-aos="fade-up" data-aos-duration="800"><?= lang('Home.featured-services.intro-1') ?></p>
+                        <p data-aos="fade-up" data-aos-duration="900"><?= lang('Home.featured-services.intro-2') ?></p>
+                        <div class="mt-4" data-aos="fade-up" data-aos-duration="1100">
                             <a href="<?= base_url($locale . '/solutions') ?>" class="btn-consultation"><span><?= lang('Home.featured-services.learn-more') ?></span><i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5" data-aos-duration="1000">
+            <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
                 <div class="col-12">
                     <div
                         class="services-slider swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
