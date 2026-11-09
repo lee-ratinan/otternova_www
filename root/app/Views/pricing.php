@@ -72,10 +72,10 @@
                         <table class="table table-hover table-striped table-pricing" data-aos="fade-right" data-aos-duration="800">
                             <thead>
                             <tr>
-                                <th><?= lang('Pricing.features.name') ?></th>
+                                <th class="text-center" style="min-width:300px;"><?= lang('Pricing.features.name') ?></th>
                                 <?php foreach ($plans as $planSlug => $data): ?>
-                                    <th class="text-center">
-                                        <i class="bi bi-<?= $data['icon'] ?>"></i>
+                                    <th class="text-center" style="min-width:100px;">
+                                        <i class="bi bi-<?= $data['icon'] ?>"></i><br/>
                                         <?= lang('Pricing.plans.' . $planSlug . '.name') ?>
                                     </th>
                                 <?php endforeach; ?>
