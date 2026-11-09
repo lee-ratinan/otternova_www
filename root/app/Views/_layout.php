@@ -110,7 +110,7 @@
 </head>
 <body class="index-page lang-<?= $locale ?>">
 <header id="header" class="header fixed-top">
-    <div class="topbar d-flex align-items-center dark-background d-none">
+    <div class="topbar d-flex align-items-center dark-background">
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:<?= getenv('OTTER_EMAIL') ?>"><?= getenv('OTTER_EMAIL') ?></a></i>
@@ -233,6 +233,7 @@
 <script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
+<script>AOS.init({duration: 600, easing: "ease-in-out", once: true});</script>
 <!--<script src="--><?php //= getenv('LINK_API') ?><!--js/tracker.js" data-site="www" defer></script>-->
 <!-- Main JS File -->
 <script src="<?= base_url('assets/js/main.js') ?>"></script>

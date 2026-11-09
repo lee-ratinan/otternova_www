@@ -205,10 +205,3 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
-
-/* AOS Animation */
-AOS.init({
-  duration: 600,
-  easing: "ease-in-out",
-  once: true
-});
