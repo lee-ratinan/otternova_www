@@ -236,8 +236,8 @@
 <script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
 <script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
 <script>AOS.init({duration: 600, easing: "ease-in-out", once: true});</script>
-<!--<script src="--><?php //= getenv('LINK_API') ?><!--js/tracker.js" data-site="www" defer></script>-->
 <!-- Main JS File -->
 <script src="<?= base_url('assets/js/main.js') ?>"></script>
+<script src="<?= getenv('LINK_API') ?>js/tracker.js" data-site="www" defer></script>
 </body>
 </html>
