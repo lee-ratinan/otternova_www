@@ -57,8 +57,8 @@
             const root = document.documentElement;
             const media = window.matchMedia('(prefers-color-scheme: dark)');
             const ICONS = {
-                light: '<i class="bi bi-brightness-high"></i>',
-                dark: '<i class="bi bi-moon"></i>',
+                light: '<i class="bi bi-brightness-high ms-0"></i>',
+                dark: '<i class="bi bi-moon ms-0"></i>',
             };
             function getCookie(name) {
                 const match = document.cookie.split('; ').find((row) => row.startsWith(name + '='));
@@ -153,6 +153,7 @@
                             <li><a href="<?= base_url($locale . '/locale') ?>"><?= lang('Meta.page-title.locale') ?></a></li>
                         </ul>
                     </li>
+                    <li><a href="#" id="theme-toggle" class="ms-0" aria-label="<?= lang('Meta.toggle-mode') ?>" title="<?= lang('Meta.mode') ?>"></a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -179,7 +180,6 @@
                     }
                     ?>
                 </div>
-                <p><?= lang('Meta.mode') ?> <a id="theme-toggle" aria-label="<?= lang('Meta.toggle-mode') ?>"></a></p>
             </div>
             <div class="col-lg-2 col-6 footer-links">
                 <h4><?= lang('Meta.useful-links') ?></h4>

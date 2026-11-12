@@ -17,7 +17,7 @@
                 <?php $i = 1; ?>
                 <?php foreach ($plans as $planSlug => $plan): ?>
                     <!-- <?= esc($planSlug) ?> plan -->
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="<?= $i * 400 ?>">
+                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="<?= $i * 400 ?>">
                         <?php $i++; ?>
                         <div class="pricing-item<?= $plan['recommended'] ? ' featured' : '' ?>">
                             <?php if ($plan['recommended']): ?>

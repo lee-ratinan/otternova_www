@@ -131,7 +131,7 @@
                                     <div class="icon-box">
                                         <i class="bi bi-lightbulb"></i>
                                     </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="arrow-link d-none"><i class="bi bi-arrow-right"></i></a>
                                     <div class="content">
                                         <h4><a href="#"><?= lang('Home.featured-services.cards.ai-solutions.title') ?></a></h4>
                                         <p><?= lang('Home.featured-services.cards.ai-solutions.description') ?></p>
@@ -145,7 +145,7 @@
                                     <div class="icon-box">
                                         <i class="bi bi-suitcase-lg"></i>
                                     </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="arrow-link d-none"><i class="bi bi-arrow-right"></i></a>
                                     <div class="content">
                                         <h4><a href="#"><?= lang('Home.featured-services.cards.business-management.title') ?></a></h4>
                                         <p><?= lang('Home.featured-services.cards.business-management.description') ?></p>
@@ -159,7 +159,7 @@
                                     <div class="icon-box">
                                         <i class="bi bi-people"></i>
                                     </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="arrow-link d-none"><i class="bi bi-arrow-right"></i></a>
                                     <div class="content">
                                         <h4><a href="#"><?= lang('Home.featured-services.cards.user-management.title') ?></a></h4>
                                         <p><?= lang('Home.featured-services.cards.user-management.description') ?></p>
@@ -173,7 +173,7 @@
                                     <div class="icon-box">
                                         <i class="bi bi-bag-check"></i>
                                     </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="arrow-link d-none"><i class="bi bi-arrow-right"></i></a>
                                     <div class="content">
                                         <h4><a href="#"><?= lang('Home.featured-services.cards.ecommerce-solutions.title') ?></a></h4>
                                         <p><?= lang('Home.featured-services.cards.ecommerce-solutions.description') ?></p>
@@ -187,7 +187,7 @@
                                     <div class="icon-box">
                                         <i class="bi bi-globe"></i>
                                     </div>
-                                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="arrow-link d-none"><i class="bi bi-arrow-right"></i></a>
                                     <div class="content">
                                         <h4><a href="#"><?= lang('Home.featured-services.cards.webpage-solutions.title') ?></a></h4>
                                         <p><?= lang('Home.featured-services.cards.webpage-solutions.description') ?></p>
