@@ -65,7 +65,7 @@
             </div>
             <div class="row mt-5 g-3 justify-content-center">
                 <div class="col-12 p-5 text-center" data-aos="fade-left" data-aos-duration="800">
-                    <h1 id="typing-target" data-text="More regional pricing coming soon!;各国向けの料金プランを近日公開！;Harga khusus untuk negara Anda akan segera tersedia!;即將推出各地區專屬價格！;Harga mengikut negara akan datang tidak lama lagi!"></h1>
+                    <h1 id="typing-target" data-text="More regional pricing coming soon!;各国向けの料金プランを近日公開！;Harga khusus untuk negara Anda akan segera tersedia!;即將推出各地區專屬價格！;Harga mengikut negara akan datang tidak lama lagi!" style="min-height:105px;"></h1>
                 </div>
                 <div class="col col-lg-10 col-xl-8">
                     <div class="table-responsive">
