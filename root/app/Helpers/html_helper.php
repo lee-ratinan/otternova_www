@@ -105,11 +105,12 @@ if (!function_exists('formatDate')) {
 
 if (!function_exists('assets_url')) {
     /**
+     * Build assets URL
      * @param string $path
      * @return string
      */
     function assets_url(string $path = ''): string
     {
-        return getenv('LINK_ASSETS') . ltrim($path, '/');
+        return getenv('LINK_ASSETS') . '/' . ltrim($path, '/');
     }
 }
