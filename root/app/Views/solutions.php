@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= assets_url('img/website/hero-img.webp') ?>);">
         <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="image-wrapper">
-                        <img src="<?= base_url('assets/img/website/hero-solutions-1.webp') ?>" alt="<?= lang('Solutions.about.image-alt') ?>" class="img-fluid main-image" data-aos="fade-right" data-aos-duration="800">
+                        <img src="<?= assets_url('img/website/hero-solutions-1.webp') ?>" alt="<?= lang('Solutions.about.image-alt') ?>" class="img-fluid main-image" data-aos="fade-right" data-aos-duration="800">
                         <div class="floating-card" data-aos="fade-left" data-aos-duration="1200">
                             <div class="card-content">
                                 <i class="bi bi-award"></i>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="services-image">
-                        <img src="<?= base_url('assets/img/website/hero-solutions-2.webp') ?>" alt="<?= lang('Solutions.featured-services.image-alt') ?>" class="img-fluid" data-aos="fade-right" data-aos-duration="800">
+                        <img src="<?= assets_url('img/website/hero-solutions-2.webp') ?>" alt="<?= lang('Solutions.featured-services.image-alt') ?>" class="img-fluid" data-aos="fade-right" data-aos-duration="800">
                         <div class="shape-circle"></div>
                         <div class="shape-accent"></div>
                     </div>

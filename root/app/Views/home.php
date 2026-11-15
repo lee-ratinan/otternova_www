@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
     <section id="hero" class="hero section dark-background">
         <div class="hero-background">
-            <img src="<?= base_url('assets/img/website/hero-img.webp') ?>" alt="<?= lang('Meta.site-title') ?>"
+            <img src="<?= assets_url('img/website/hero-img.webp') ?>" alt="<?= lang('Meta.site-title') ?>"
                  data-aos="fade-in" data-aos-duration="1000">
             <div class="overlay"></div>
         </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="services-image">
-                        <img src="<?= base_url('assets/img/website/our-impressive-services.webp') ?>" alt="<?= lang('Home.featured-services.image-alt') ?>" class="img-fluid" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="<?= assets_url('img/website/our-impressive-services.webp') ?>" alt="<?= lang('Home.featured-services.image-alt') ?>" class="img-fluid" data-aos="fade-up" data-aos-duration="1000">
                         <div class="shape-circle"></div>
                         <div class="shape-accent"></div>
                     </div>

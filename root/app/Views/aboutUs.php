@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= assets_url('img/website/hero-img.webp') ?>);">
         <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="cta-image-container" data-aos="fade-right" data-aos-duration="800">
-                            <img src="<?= base_url('assets/img/website/hero-about-us.webp') ?>" alt="<?= lang('AboutUs.call-to-action.image-alt') ?>" class="img-fluid main-image">
+                            <img src="<?= assets_url('img/website/hero-about-us.webp') ?>" alt="<?= lang('AboutUs.call-to-action.image-alt') ?>" class="img-fluid main-image">
                             <div class="floating-element element-1">
                                 <i class="bi bi-star-fill"></i>
                                 <span><?= lang('AboutUs.call-to-action.rating') ?></span>
@@ -93,7 +93,7 @@
                         <div class="swiper-slide">
                             <div class="team-card">
                                 <div class="team-image">
-                                    <img src="<?= base_url('assets/img/website/' . $member['image']) ?>" class="img-fluid" alt="" loading="lazy">
+                                    <img src="<?= assets_url('img/website/' . $member['image']) ?>" class="img-fluid" alt="" loading="lazy">
                                     <div class="team-overlay">
                                         <div class="social-links">
                                             <?php foreach ($socials as $icon => $url): ?>

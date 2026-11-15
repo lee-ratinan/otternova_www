@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= assets_url('img/website/hero-img.webp') ?>);">
         <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -119,5 +119,5 @@
             </div>
         </div>
     </section>
-    <script src="<?= base_url('assets/vendor/php-email-form/validate.js') ?>"></script>
+    <script src="<?= assets_url('vendor/php-email-form/validate.js') ?>"></script>
 <?php $this->endSection() ?>

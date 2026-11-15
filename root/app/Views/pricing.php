@@ -1,6 +1,6 @@
 <?php $this->extend('_layout'); ?>
 <?= $this->section('content') ?>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= assets_url('img/website/hero-img.webp') ?>);">
         <div class="container position-relative" data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -125,7 +125,7 @@
                 <div class="col-12 p-5 text-center payment-methods" data-aos="fade-up" data-aos-duration="800">
                     <h6 class="mb-3"><?= lang('Pricing.payment-methods.title') ?></h6>
                     <?= lang('Pricing.payment-methods.bank-transfer') ?>,
-                    <img src="<?= base_url('assets/img/payment/promptpay.webp') ?>" alt="<?= lang('Pricing.payment-methods.promptpay') ?>" title="<?= lang('Pricing.payment-methods.promptpay') ?>" />
+                    <img src="<?= assets_url('img/payment/promptpay.webp') ?>" alt="<?= lang('Pricing.payment-methods.promptpay') ?>" title="<?= lang('Pricing.payment-methods.promptpay') ?>" />
                     <?= lang('Pricing.payment-methods.promptpay') ?>
                 </div>
             </div>
@@ -149,5 +149,5 @@
             </div>
         </div>
     </section>
-    <script src="<?= base_url('assets/js/typeText.js') ?>"></script>
+    <script src="<?= assets_url('themes/www/js/typeText.js') ?>"></script>
 <?php $this->endSection() ?>

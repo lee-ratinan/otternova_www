@@ -7,15 +7,15 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <!-- Favicons -->
-    <link href="<?= base_url('assets/img/logo.webp') ?>" rel="icon">
-    <link href="<?= base_url('assets/img/logo.webp') ?>" rel="apple-touch-icon">
+    <link href="<?= assets_url('img/logo.webp') ?>" rel="icon">
+    <link href="<?= assets_url('img/logo.webp') ?>" rel="apple-touch-icon">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('vendor/bootstrap5.3.8/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('themes/www/css/main.css') ?>" rel="stylesheet">
     <!-- =======================================================
     * Template Name: Passion
     * Template URL: https://bootstrapmade.com/passion-bootstrap-template/
@@ -45,7 +45,7 @@
 <body class="index-page">
 <div class="container">
     <section class="section text-center align-items-center justify-content-center mt-5 p-5">
-        <img src="<?= base_url('assets/img/website/not-found.webp')?>" alt="Coming Soon" class="img-fluid under-construction-img" />
+        <img src="<?= assets_url('img/website/not-found.webp')?>" alt="Coming Soon" class="img-fluid under-construction-img" />
         <h1 class="pt-5 text-danger display-1">[404]</h1>
         <h2 class="text-danger">
             Our Otters could not find the page you are looking for...

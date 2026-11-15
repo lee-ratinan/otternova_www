@@ -102,3 +102,14 @@ if (!function_exists('formatDate')) {
         return date('M j, Y', $time);
     }
 }
+
+if (!function_exists('assets_url')) {
+    /**
+     * @param string $path
+     * @return string
+     */
+    function assets_url(string $path = ''): string
+    {
+        return getenv('LINK_ASSETS') . ltrim($path, '/');
+    }
+}

@@ -10,12 +10,12 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="<?= lang('Meta.page-title.' . $slug) ?> | <?= lang('Meta.site-title') ?>">
     <meta property="og:description" content="<?= lang('Meta.description.' . $slug) ?>">
-    <meta property="og:image" content="<?= base_url('assets/img/otternova-greeting.webp') ?>">
+    <meta property="og:image" content="<?= assets_url('img/otternova-greeting.webp') ?>">
     <meta property="og:url" content="<?= current_url() ?>">
     <meta property="og:type" content="website" />
     <!-- Favicons -->
-    <link href="<?= base_url('assets/img/logo.webp') ?>" rel="icon">
-    <link href="<?= base_url('assets/img/logo.webp') ?>" rel="apple-touch-icon">
+    <link href="<?= assets_url('img/logo.webp') ?>" rel="icon">
+    <link href="<?= assets_url('img/logo.webp') ?>" rel="apple-touch-icon">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -25,14 +25,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <?php endif; ?>
     <!-- Vendor CSS Files -->
-    <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/vendor/aos/aos.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/vendor/flag-icon/css/flag-icons.min.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('vendor/bootstrap5.3.8/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('vendor/bootstrap-icons1.13.1/bootstrap-icons.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('vendor/swiper11.2.10/swiper-bundle.min.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('vendor/aos/aos.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('vendor/flag-icon/css/flag-icons.min.css') ?>" rel="stylesheet">
     <!-- Main CSS File -->
-    <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet">
+    <link href="<?= assets_url('themes/www/css/main.css') ?>" rel="stylesheet">
     <!-- Link Languages -->
     <?php
     $languages = listSupportedLanguages();
@@ -132,7 +132,7 @@
     <div class="branding d-flex align-items-cente">
         <div class="container position-relative d-flex align-items-center justify-content-between">
             <a href="<?= base_url($locale . '/home') ?>" class="logo d-flex align-items-center">
-                <img src="<?= base_url('assets/img/logo-dark.webp') ?>" alt="<?= lang('Meta.site-title') ?>">
+                <img src="<?= assets_url('img/logo-dark.webp') ?>" alt="<?= lang('Meta.site-title') ?>">
                 <h1 class="sitename"><?= lang('Meta.site-title') ?></h1>
             </a>
             <nav id="navmenu" class="navmenu">
@@ -228,16 +228,16 @@
     <div></div>
 </div>
 <!-- Vendor JS Files -->
-<script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/glightbox/js/glightbox.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/purecounter/purecounter_vanilla.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/aos/aos.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/swiper/swiper-bundle.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/isotope-layout/isotope.pkgd.min.js') ?>"></script>
+<script src="<?= assets_url('vendor/bootstrap5.3.8/js/bootstrap.bundle.min.js') ?>"></script>
+<script src="<?= assets_url('vendor/glightbox/js/glightbox.min.js') ?>"></script>
+<script src="<?= assets_url('vendor/purecounter1.5.0/purecounter_vanilla.js') ?>"></script>
+<script src="<?= assets_url('vendor/aos/aos.js') ?>"></script>
+<script src="<?= assets_url('vendor/swiper11.2.10/swiper-bundle.min.js') ?>"></script>
+<script src="<?= assets_url('vendor/imagesloaded/imagesloaded.pkgd.min.js') ?>"></script>
+<script src="<?= assets_url('vendor/isotope-layout3.0.6/isotope.pkgd.min.js') ?>"></script>
 <script>AOS.init({duration: 600, easing: "ease-in-out", once: true});</script>
 <!-- Main JS File -->
-<script src="<?= base_url('assets/js/main.js') ?>"></script>
+<script src="<?= assets_url('themes/www/js/main.js') ?>"></script>
 <script src="<?= getenv('LINK_API') ?>js/tracker.js" data-site="www" defer></script>
 </body>
 </html>

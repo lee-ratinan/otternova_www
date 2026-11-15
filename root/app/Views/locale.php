@@ -4,7 +4,7 @@
         #target::after {content: '|';animation: blink 0.7s infinite;}
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     </style>
-    <div class="page-title dark-background" style="background-image: url(<?= base_url('assets/img/website/hero-img.webp') ?>);">
+    <div class="page-title dark-background" style="background-image: url(<?= assets_url('img/website/hero-img.webp') ?>);">
         <div class="container position-relative"  data-aos="fade-left" data-aos-duration="800">
             <h1><?= lang('Meta.page-title.' . $slug) ?></h1>
             <nav class="breadcrumbs">
@@ -35,5 +35,5 @@
             </div>
         </div>
     </section>
-    <script src="<?= base_url('assets/js/typeText.js') ?>"></script>
+    <script src="<?= assets_url('themes/www/js/typeText.js') ?>"></script>
 <?php $this->endSection() ?>
