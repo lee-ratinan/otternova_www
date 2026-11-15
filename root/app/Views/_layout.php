@@ -13,6 +13,7 @@
     <meta property="og:image" content="<?= assets_url('img/otternova-greeting.webp') ?>">
     <meta property="og:url" content="<?= current_url() ?>">
     <meta property="og:type" content="website" />
+    <link href="<?= assets_url() ?>" rel="preconnect">
     <!-- Favicons -->
     <link href="<?= assets_url('img/logo.webp') ?>" rel="icon">
     <link href="<?= assets_url('img/logo.webp') ?>" rel="apple-touch-icon">
